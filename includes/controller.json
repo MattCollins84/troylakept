@@ -1,0 +1,76 @@
+{
+  "controllers": [
+    {
+        "regex": "^/$",
+        "controllerClass": "MainController",
+        "method": "renderHomepage",
+        "authentication": false 
+    },
+    {
+        "regex": "^/results$",
+        "controllerClass": "MainController",
+        "method": "renderResults",
+        "authentication": false 
+    },
+    {
+        "regex": "^/services$",
+        "controllerClass": "MainController",
+        "method": "renderServices",
+        "authentication": false 
+    },
+    {
+        "regex": "^/signup$",
+        "controllerClass": "MainController",
+        "method": "doSignup",
+        "authentication": false 
+    },
+    {
+        "regex": "^/auth/login$",
+        "controllerClass": "AuthenticationController",
+        "method": "login",
+        "authentication": false 
+    },
+    {
+        "regex": "^/admin$",
+        "controllerClass": "AdminController",
+        "method": "renderLogin",
+        "authentication": false 
+    },
+    {
+        "regex": "^/admin/logout$",
+        "controllerClass": "AuthenticationController",
+        "method": "logout",
+        "authentication": false 
+    },
+    {
+        "regex": "^/admin/dashboard$",
+        "controllerClass": "AdminController",
+        "method": "renderDashboard",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/contacts$",
+        "controllerClass": "AdminController",
+        "method": "renderContacts",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/quotes$",
+        "controllerClass": "QuoteController",
+        "method": "renderQuotes",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/quotes/add$",
+        "controllerClass": "QuoteController",
+        "method": "addQuote",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/quotes/delete/[0-9]+$",
+        "controllerClass": "QuoteController",
+        "method": "deleteQuote",
+        "authentication": "adminOnly" 
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Insert Your Custom Styles Below. All styles located in this file will
+   override existing main.css stylesheets.
+   ========================================================================== */ 
+
+
+.oa {
+  overflow: auto;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.mb10 {
+  margin-bottom: 10px!important;
+}
+
+.mb20 {
+  margin-bottom: 20px!important;
+}
+
+.mb40 {
+  margin-bottom: 40px!important;
+}
+
+.mb50 {
+  margin-bottom: 50px!important;
+}
+
+.mb60 {
+  margin-bottom: 60px!important;
+}
+
+.mt80 {
+  margin-top: 80px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px!important;
+}
+
+.mt30 {
+  margin-top: 30px!important;
+}
+
+.mt40 {
+  margin-top: 40px!important;
+}
+
+.mt60 {
+  margin-top: 60px!important;
+}
+
+.mt80 {
+  margin-top: 80px!important;
+}
+
+.mt100 {
+  margin-top: 100px!important;
+}
+
+.mt120 {
+  margin-top: 120px!important;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mr20 {
+  margin-right: 20px!important;
+}
+
+.mr10 {
+  margin-right: 10px!important;
+}
+
+.ml20 {
+  margin-left: 20px!important;
+}
+
+.ml0 {
+  margin-left: 0px!important;
+}
+
+.pad0 {
+  padding: 0!important;
+}
+
+.pt20 {
+  padding-top: 20px!important;
+}
+
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.pb20 {
+  padding-bottom: 20px!important;
+}
+
+.pb40 {
+  padding-bottom: 40px!important;
+}
+
+.br0 {
+  border-radius: 0px!important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fs30 {
+  font-size: 30px;
+}
+
+.mh170 {
+  min-height: 170px;
+}
+
+.grey-top {
+  border-top: 1px solid #EEE;
+}
+
+.grey-bottom {
+  border-bottom: 1px solid #EEE;
+}
+
+.signup-container {
+  padding: 20px;
+  background: #ee4848;
+  border-radius: 6px;
+}
+
+.signup-container h2 {
+  margin: 0px 0 10px 0;
+  padding: 0;
+}
+
+.slogan h1 {
+  letter-spacing: 0px;
+}
+
+.homepage-logo {
+  display: block;
+  margin: 0 auto;
+  width: 380px;
+}
+
+.b-black {
+  border: 3px solid black;
+}
+
+.page-padding {
+  padding-top: 110px;
+}
+
+.img-block {
+  display: block;
+  margin: 0 auto;
+}
+
+/* MEDIA QUERIES */
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+
+  .homepage-logo {
+    width: 260px;
+    margin-bottom: 40px!important;
+  }
+
+
+  .page-padding {
+    padding-top: 70px;
+  }
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 481px) and (max-width: 767px) { 
+  
+  .homepage-logo {
+    margin-bottom: 40px!important;
+  }
+
+  .page-padding {
+    padding-top: 70px;
+  }
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+  .homepage-logo {
+    margin-bottom: 30px!important;
+  }
+
+}

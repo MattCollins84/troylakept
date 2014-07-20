@@ -1,0 +1,15 @@
+{
+  "config": [
+    {
+      "hostnames": ["7cf3ff82.ngrok.com", "troy.mattcollins.com"],
+      "in_production": false,
+      "support_email": "mattstrikes@googlemail.com",
+      "db": {
+        "user": "root",
+        "password": "sqldbmine",
+        "host": "127.0.0.1",
+        "db": "troylakept"
+      }
+    }
+  ]
+}
