@@ -36,6 +36,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+          <a class="navbar-brand visible-lg mt10" href="/"><img src="/img/header-logo.png" /></a>
+          <a class="navbar-brand hidden-lg" href="/"><img src="/img/header-logo-small.png" /></a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

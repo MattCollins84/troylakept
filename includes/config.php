@@ -2,6 +2,7 @@
 require_once("includes/DB.php");
 require_once("includes/Contact.php");
 require_once("includes/Quote.php");
+require_once("includes/Video.php");
 require_once("includes/functions.php");
 
 session_start();

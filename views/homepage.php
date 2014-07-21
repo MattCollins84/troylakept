@@ -4,7 +4,7 @@
     <div class="row mt80">
       <div class="col-md-6 col-sm-12">
         
-        <img src="/img/troy-logo-trans-380.png" class="image-responsive homepage-logo" alt="Troy Lake PT" />
+        <img src="/img/troy-lake-logo-trans-420.png" class="image-responsive homepage-logo" alt="Troy Lake PT" />
 
       </div>
 
@@ -46,12 +46,6 @@
 <!--About Section-->
 <section id="content" class="pb40 pt20">
   <div class="container">
-    
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
-        
-      </div>
-    </div>
     
     <div class="row margin-30">
       <div class="col-md-3">
@@ -110,6 +104,35 @@
   </div>
 </section>
 
+<? if ($data['videos']): ?>
+<section id="content" class="pb40 pt20">
+  <div class="container">
+    
+    <div class="row">
+      
+      <div class="col-sm-12 mb20">
+        <h1 class="black">Check out some of my Videos</h1>
+      </div>
+
+      <? foreach ($data['videos'] as $v): ?>
+      <div class="col-sm-6 col-md-4">
+        <div class="media mb20">
+          <a class="pull-left" target="_blank" href="<?=$v->getUrl();?>">
+            <img class="media-object" src="<?=$v->getThumbnail();?>" id="detail-thumb">
+          </a>
+          <div class="media-body">
+            <h5 class="media-heading black lead"><?=$v->getTitle();?></h5>
+            <p><?=$v->getDescription();?></p>
+          </div>
+        </div>
+      </div>
+      <? endforeach; ?>
+      
+    </div>
+    
+  </div>
+</section>
+<? endif; ?>
 <script>
 
 $(document).ready(function() {

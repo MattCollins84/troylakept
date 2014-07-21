@@ -17,7 +17,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
-            <p>Troy Lake Personal Training HQ, 47 Westfield Avenue, redcar, TS10 1HF | 07711122333  |  <a href="mailto:troy@troylakept.com"><i class="fa fa-envelope-o"></i> troy@troylakept.com</a></p>
+            <p>Troy Lake Personal Training HQ, 47 Westfield Avenue, Redcar, TS10 1HF | 07711122333  |  <a href="mailto:troy@troylakept.com"><i class="fa fa-envelope-o"></i> troy@troylakept.com</a></p>
             <hr>
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p>Copyright <?=date("Y"); ?> - All Rights Reserved</p>
-            <p><a href="/admin" target="_blank">admin</a></p>
+            <p><a href="/admin" target="_blank" rel="nofollow">admin</a></p>
           </div>
         </div>
       </div>

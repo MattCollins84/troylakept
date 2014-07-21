@@ -240,7 +240,7 @@ class Quote extends DBExporter {
       }
       return $output;
     } else {
-      return false;
+      return array();
     }
   }
 

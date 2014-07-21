@@ -71,6 +71,30 @@
         "controllerClass": "QuoteController",
         "method": "deleteQuote",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/videos$",
+        "controllerClass": "VideoController",
+        "method": "renderVideos",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/videos/add$",
+        "controllerClass": "VideoController",
+        "method": "addVideo",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/videos/delete/[0-9]+$",
+        "controllerClass": "VideoController",
+        "method": "deleteVideo",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/videos/feature/[0-9]+$",
+        "controllerClass": "VideoController",
+        "method": "featureVideo",
+        "authentication": "adminOnly" 
     }
   ]
 }

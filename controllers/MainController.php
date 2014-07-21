@@ -19,6 +19,7 @@
       $data = array();
       $data['page'] = "homepage";
       $data['quote'] = Quote::getRandom();
+      $data['videos'] = Video::getAll();
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();

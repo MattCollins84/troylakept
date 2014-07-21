@@ -37,6 +37,7 @@
             <li><a href="/admin/dashboard">Dashboard</a></li>
             <li><a href="/admin/contacts">Contacts</a></li>
             <li><a href="/admin/quotes">Quotes</a></li>
+            <li><a href="/admin/videos">Videos</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="/admin/logout">Logout</a></li>
