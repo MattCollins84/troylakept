@@ -3,6 +3,7 @@ require_once("includes/DB.php");
 require_once("includes/Contact.php");
 require_once("includes/Quote.php");
 require_once("includes/Video.php");
+require_once("includes/Service.php");
 require_once("includes/Content.php");
 require_once("includes/functions.php");
 

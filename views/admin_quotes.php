@@ -5,7 +5,21 @@
     <h1>Quotes</h1>
     <p>Manage the random quotes that appear at the bottom of each website page.</p>
   </div>
+  
+  <? if ($data['msg']): ?>
+  <div class="row">
 
+    <div class="col-sm-12">
+
+      <div class="alert alert-success">
+        <p><?=$data['msg'];?></p>
+      </div>
+
+    </div>
+
+  </div>
+  <? endif; ?>
+  
   <div class="row">
 
     <div class="col-sm-12">

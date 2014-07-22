@@ -53,6 +53,7 @@
 
       $data = array();
       $data['page'] = "services";
+      $data['services'] = Service::getAll("service_id ASC");
       $data['quote'] = Quote::getRandom();
 
       $h = $rest->getHierarchy();    

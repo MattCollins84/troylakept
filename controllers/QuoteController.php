@@ -21,6 +21,8 @@
       $vars = $rest->getRequestVars();
 
       $data['quotes'] = Quote::getAll("name ASC");
+      $data['msg'] = $_SESSION['msg'];
+      $_SESSION['msg'] = "";
 
       echo View::renderView("admin_quotes", $data, false, true);
           
@@ -41,6 +43,13 @@
       $q = new Quote($data['id']);
       $q->markForDeletion();
       $q->save();
+
+      $_SESSION['msg'] = "Quote deleted successfully.";
+
+      echo json_encode(array(
+        "success" => true
+      ));
+      exit;
           
     }
 
@@ -69,6 +78,8 @@
       $q->setQuote($vars['quote']);
       $q->markNew();
       $q->save();
+
+      $_SESSION['msg'] = "Quote added successfully.";
 
       echo json_encode(array(
         "success" => true

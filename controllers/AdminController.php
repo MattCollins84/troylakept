@@ -21,6 +21,11 @@
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
+      if ($_SESSION['user'] && $_SESSION['user']['type'] == "admin") {
+        header("Location: /admin/dashboard");
+        exit;
+      }
+
       echo View::renderView("login", $data, false, true);
           
     }

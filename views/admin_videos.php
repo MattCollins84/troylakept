@@ -18,6 +18,20 @@
     </div>
   </div>
 
+  <? if ($data['msg']): ?>
+  <div class="row">
+
+    <div class="col-sm-12">
+
+      <div class="alert alert-success">
+        <p><?=$data['msg'];?></p>
+      </div>
+
+    </div>
+
+  </div>
+  <? endif; ?>
+
   <div class="row">
 
     <div class="col-sm-12" id="details">

@@ -107,6 +107,42 @@
         "controllerClass": "ContentController",
         "method": "updateAbout",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/about$",
+        "controllerClass": "ContentController",
+        "method": "renderAbout",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/services$",
+        "controllerClass": "ServicesController",
+        "method": "renderServices",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/services/update/[0-9]+$",
+        "controllerClass": "ServicesController",
+        "method": "addService",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/services/add$",
+        "controllerClass": "ServicesController",
+        "method": "addService",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/services/[0-9]+$",
+        "controllerClass": "ServicesController",
+        "method": "renderEditService",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/services/delete/[0-9]+$",
+        "controllerClass": "ServicesController",
+        "method": "deleteService",
+        "authentication": "adminOnly" 
     }
   ]
 }

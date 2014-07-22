@@ -21,6 +21,8 @@
       $vars = $rest->getRequestVars();
 
       $data['videos'] = Video::getAll("title ASC");
+      $data['msg'] = $_SESSION['msg'];
+      $_SESSION['msg'] = "";
 
       echo View::renderView("admin_videos", $data, false, true);
           
@@ -41,6 +43,13 @@
       $q = new Video($data['id']);
       $q->markForDeletion();
       $q->save();
+
+      $_SESSION['msg'] = "Video deleted successfully.";
+
+      echo json_encode(array(
+        "success" => true
+      ));
+      exit;
           
     }
 
@@ -87,6 +96,8 @@
       $q->setThumbnail($vars['thumbnail']);
       $q->markNew();
       $q->save();
+
+      $_SESSION['msg'] = "Video added successfully.";
 
       echo json_encode(array(
         "success" => true

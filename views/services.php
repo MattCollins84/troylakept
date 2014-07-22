@@ -8,103 +8,66 @@
   </div>
 </section>
 
-<section class="content">
+<? foreach ($data['services'] as $i => $s): ?>
+<?
+  //$icon = "<img class='mt40' src='/img/header-logo.png' alt='".$s->getName()."' />";
+  $icon = "";
+  if ($s->getIcon()) {
 
-  <div class="container">
-    
-    <div class="row mb50 mt10">
-      <div class="col-md-9">
-        <h3><span class="red">One 2 One Training</span></h3>
-        <p class="lead">One on One training with Troy, designed to help you achieve your dreams and exceed your expectations</p>
-        <p class="gray">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-        <a class="btn-main" href="/contact">Find out more!</a>
-      </div>
-      <div class="col-md-3">
-        <p class="text-center mt40"><i class="red fa fa-user fa-8x"></i></p>
-      </div>
-    </div>
-    
-  </div>
+    $icons = explode(",", $s->getIcon());
+    $bits = array();
 
-</section> 
+    $icon = '<p class="text-center mt40">';
+    foreach ($icons as $ic) {
+      $c = (($i % 2)?"white ":"");
+      $icon .= '<i class="red fa '.$c.$ic.' fa-8x"></i>';
+    }
+    $icon .= '</p>';
 
-<section class="red-content">
+  }
+?>
+<? if ($i % 2): ?>
+  <section class="red-content">
 
-  <div class="container">
-    
-    <div class="row">
+    <div class="container">
       
-      <div class="col-md-3">
-        <p class="text-center mt40"><i class="white fa fa-female fa-8x"></i><i class="white fa fa-male fa-8x"></i></p>
+      <div class="row">
+        
+        <div class="col-md-3">
+          <?=$icon;?>
+        </div>
+        <div class="col-md-9">
+          <h3><span class="white"><?=$s->getName();?></span></h3>
+          <p class="lead white"><?=$s->getHeadline();?></p>
+          <p class="white"><?=$s->getDescription();?></p><br />
+          <a class="btn-main" href="/contact">Find out more!</a>
+        </div>
       </div>
-      <div class="col-md-9">
-        <h3><span class="white">Partner Training</span></h3>
-        <p class="lead white">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-        <p class="white">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-        <a class="btn-main" href="/contact">Find out more!</a>
-      </div>
+      
     </div>
-    
-  </div>
 
-</section>
+  </section>
+<? else: ?>
+  <section class="content">
 
-<section class="content">
-
-  <div class="container">
-    
-    <div class="row mb50 mt10">
-      <div class="col-md-9">
-        <h3><span class="red">Group Training</span></h3>
-        <p class="lead">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-        <p class="gray">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-        <a class="btn-main" href="/contact">Find out more!</a>
+    <div class="container">
+      
+      <div class="row mb50 mt10">
+        <div class="col-md-9">
+          <h3><span class="red"><?=$s->getName();?></span></h3>
+          <p class="lead"><?=$s->getHeadline();?></p>
+          <p class="gray"><?=$s->getDescription();?></p><br />
+          <a class="btn-main" href="/contact">Find out more!</a>
+        </div>
+        <div class="col-md-3">
+          <?=$icon;?>
+        </div>
       </div>
-      <div class="col-md-3">
-        <p class="text-center mt40"><i class="fa fa-users red fa-8x"></i></p>
-      </div>
+      
     </div>
-    
-  </div>
 
-</section> 
+  </section> 
+<? endif ?>
 
-<section class="red-content">
 
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-md-3">
-        <p class="text-center mt40"><i class="fa fa-bullseye white fa-8x"></i></p>
-      </div>
-      <div class="col-md-9">
-        <h3><span class="white">hardCORE abs</span></h3>
-        <p class="lead white">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-        <p class="white">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-        <a class="btn-main" href="/contact">Find out more!</a>
-      </div>
-    </div>
-    
-  </div>
-
-</section> 
-
-<section class="content">
-
-  <div class="container">
-    
-    <div class="row mb50 mt10">
-      <div class="col-md-9">
-        <h3><span class="red">Diet Plans</span></h3>
-        <p class="lead">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
-        <p class="gray">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-        <a class="btn-main" href="/contact">Find out more!</a>
-      </div>
-      <div class="col-md-3">
-        <p class="text-center mt40"><i class="fa fa-list-alt red fa-8x"></i></p>
-      </div>
-    </div>
-    
-  </div>
-
-</section>
+<? endforeach; ?>

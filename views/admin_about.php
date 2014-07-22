@@ -5,6 +5,20 @@
     <h1>About</h1>
     <p>Edit the text in the &quot;About&quot; section on the homepage.</p>
   </div>
+  
+  <? if ($data['msg']): ?>
+  <div class="row">
+
+    <div class="col-sm-12">
+
+      <div class="alert alert-success">
+        <p><?=$data['msg'];?></p>
+      </div>
+
+    </div>
+
+  </div>
+  <? endif; ?>
 
   <div class="row">
 
