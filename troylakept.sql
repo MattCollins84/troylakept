@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2014 at 09:00 AM
+-- Generation Time: Jul 22, 2014 at 05:35 PM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `content` (
 --
 
 INSERT INTO `content` (`content_id`, `content`, `type`) VALUES
-(1, 'about us\r\n\r\nnew line', 'text');
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta ante. Donec rutrum, massa vitae dapibus bibendum, ligula sapien lobortis neque, nec tincidunt orci urna a lacus. Fusce non lacus congue, tincidunt ante eget, hendrerit nisi. Fusce et vehicula dolor, in mattis augue. Nulla tempor eros nulla, vitae ullamcorper metus ullamcorper nec.\r\n\r\nNulla aliquet orci justo. Donec eu nibh orci. Vivamus tortor quam, aliquet eu iaculis eget, placerat vel neque. Ut eu facilisis erat, id sodales libero. Aenean malesuada justo ac gravida interdum. Quisque tincidunt hendrerit eleifend. Vestibulum aliquam felis in convallis eleifend. Suspendisse imperdiet mauris mauris, at mollis diam sagittis quis. Fusce vehicula eros nec ante ullamcorper, id sagittis nisl egestas. Nulla vitae nunc venenatis orci varius tempor sit amet sit amet odio.', 'text');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `quotes` (
   `quote` text NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`quote_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `quotes`
@@ -80,6 +80,33 @@ CREATE TABLE IF NOT EXISTS `quotes` (
 INSERT INTO `quotes` (`quote_id`, `quote`, `name`) VALUES
 (1, 'Troy helped me achieve all of my goals, I managed to lose weight, tone up & I have never felt better. Can''t wait for my holiday now!', 'Tracey, Redcar'),
 (3, 'My One on One training with Troy really helped me bulk up in time for my Iron Man event. I couldn''t have finished the course if it wasn''t for Troy!', 'Dave, Saltburn');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE IF NOT EXISTS `services` (
+  `service_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `headline` text NOT NULL,
+  `description` text NOT NULL,
+  `icon` varchar(100) NOT NULL,
+  PRIMARY KEY (`service_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`service_id`, `name`, `headline`, `description`, `icon`) VALUES
+(1, 'One 2 One Training', 'One on One training with Troy, designed to help you achieve your dreams and exceed your expectations', 'Lorem ipsum dolor sit amet,  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-user'),
+(3, 'Partner Training', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-male,fa-female'),
+(4, 'Fit Farm', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-users'),
+(5, 'Bootcamp', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-users'),
+(6, 'hardCORE abs', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', ''),
+(7, 'Diet Plans', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-list-alt');
 
 -- --------------------------------------------------------
 
@@ -95,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `thumbnail` varchar(255) NOT NULL,
   `featured` tinyint(4) NOT NULL,
   PRIMARY KEY (`video_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `videos`
