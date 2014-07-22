@@ -55,12 +55,11 @@
       <div class="col-md-9">
 
         <h1 class="dark-gray pb20">About Troy Lake PT</h1>
-
-        <p class="gray">Lorem ipsum dolor sit amet, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         
-        <p class="gray">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <p><a class="btn btn-danger btn-lg" href="#">Contact Us</a></p>
+        <? foreach ($data['about'] as $line): ?>
+          <p class="gray"><?=$line;?></p>
+        <? endforeach; ?>
+        <p><a class="btn btn-danger btn-lg" href="#">Get In Touch</a></p>
 
       </div>
     </div>

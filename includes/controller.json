@@ -95,6 +95,18 @@
         "controllerClass": "VideoController",
         "method": "featureVideo",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/about$",
+        "controllerClass": "ContentController",
+        "method": "renderAbout",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/about/update$",
+        "controllerClass": "ContentController",
+        "method": "updateAbout",
+        "authentication": "adminOnly" 
     }
   ]
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 21, 2014 at 12:29 PM
+-- Generation Time: Jul 22, 2014 at 09:00 AM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -39,6 +39,26 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 
 INSERT INTO `contacts` (`contact_id`, `name`, `email`) VALUES
 (1, 'Matt', 'matt@strikesandgutters.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `content`
+--
+
+CREATE TABLE IF NOT EXISTS `content` (
+  `content_id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text NOT NULL,
+  `type` varchar(50) NOT NULL,
+  PRIMARY KEY (`content_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `content`
+--
+
+INSERT INTO `content` (`content_id`, `content`, `type`) VALUES
+(1, 'about us\r\n\r\nnew line', 'text');
 
 -- --------------------------------------------------------
 

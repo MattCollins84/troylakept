@@ -20,6 +20,8 @@
       $data['page'] = "homepage";
       $data['quote'] = Quote::getRandom();
       $data['videos'] = Video::getAll();
+      $data['about'] = new Content(1);
+      $data['about'] = explode("\n", $data['about']->getContent());
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();

@@ -29,7 +29,7 @@
         <div class="media-body">
           <h4 class="media-heading" id="detail-title"></h4>
           <p id="detail-desc"></p>
-          <button class="btn btn-success" type="button" id="save">Save Video</button>
+          <button class="btn btn-success hidden" type="button" id="save">Save Video</button>
         </div>
       </div>
 
@@ -110,7 +110,9 @@
 
         var link = "https://www.youtube.com/watch?v="+data.id
         $("#detail-link").attr("href", link);
-        video_data.url = link
+        video_data.url = link;
+
+        $('#save').removeClass("hidden");
 
       }
 
