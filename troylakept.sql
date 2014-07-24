@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2014 at 05:35 PM
+-- Generation Time: Jul 24, 2014 at 05:28 PM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -23,116 +23,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contacts`
+-- Table structure for table `blog`
 --
 
-CREATE TABLE IF NOT EXISTS `contacts` (
-  `contact_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`contact_id`, `name`, `email`) VALUES
-(1, 'Matt', 'matt@strikesandgutters.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `content`
---
-
-CREATE TABLE IF NOT EXISTS `content` (
-  `content_id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text NOT NULL,
-  `type` varchar(50) NOT NULL,
-  PRIMARY KEY (`content_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `content`
---
-
-INSERT INTO `content` (`content_id`, `content`, `type`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget porta ante. Donec rutrum, massa vitae dapibus bibendum, ligula sapien lobortis neque, nec tincidunt orci urna a lacus. Fusce non lacus congue, tincidunt ante eget, hendrerit nisi. Fusce et vehicula dolor, in mattis augue. Nulla tempor eros nulla, vitae ullamcorper metus ullamcorper nec.\r\n\r\nNulla aliquet orci justo. Donec eu nibh orci. Vivamus tortor quam, aliquet eu iaculis eget, placerat vel neque. Ut eu facilisis erat, id sodales libero. Aenean malesuada justo ac gravida interdum. Quisque tincidunt hendrerit eleifend. Vestibulum aliquam felis in convallis eleifend. Suspendisse imperdiet mauris mauris, at mollis diam sagittis quis. Fusce vehicula eros nec ante ullamcorper, id sagittis nisl egestas. Nulla vitae nunc venenatis orci varius tempor sit amet sit amet odio.', 'text');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quotes`
---
-
-CREATE TABLE IF NOT EXISTS `quotes` (
-  `quote_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `blog` (
+  `blog_id` int(11) NOT NULL AUTO_INCREMENT,
+  `posted_date` date NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `body` text NOT NULL,
   `quote` text NOT NULL,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`quote_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `intro` text NOT NULL,
+  PRIMARY KEY (`blog_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `quotes`
+-- Dumping data for table `blog`
 --
 
-INSERT INTO `quotes` (`quote_id`, `quote`, `name`) VALUES
-(1, 'Troy helped me achieve all of my goals, I managed to lose weight, tone up & I have never felt better. Can''t wait for my holiday now!', 'Tracey, Redcar'),
-(3, 'My One on One training with Troy really helped me bulk up in time for my Iron Man event. I couldn''t have finished the course if it wasn''t for Troy!', 'Dave, Saltburn');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `services`
---
-
-CREATE TABLE IF NOT EXISTS `services` (
-  `service_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `headline` text NOT NULL,
-  `description` text NOT NULL,
-  `icon` varchar(100) NOT NULL,
-  PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
-
---
--- Dumping data for table `services`
---
-
-INSERT INTO `services` (`service_id`, `name`, `headline`, `description`, `icon`) VALUES
-(1, 'One 2 One Training', 'One on One training with Troy, designed to help you achieve your dreams and exceed your expectations', 'Lorem ipsum dolor sit amet,  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-user'),
-(3, 'Partner Training', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-male,fa-female'),
-(4, 'Fit Farm', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-users'),
-(5, 'Bootcamp', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-users'),
-(6, 'hardCORE abs', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', ''),
-(7, 'Diet Plans', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-list-alt');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `videos`
---
-
-CREATE TABLE IF NOT EXISTS `videos` (
-  `video_id` int(11) NOT NULL AUTO_INCREMENT,
-  `url` varchar(255) NOT NULL,
-  `title` text NOT NULL,
-  `description` text NOT NULL,
-  `thumbnail` varchar(255) NOT NULL,
-  `featured` tinyint(4) NOT NULL,
-  PRIMARY KEY (`video_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `videos`
---
-
-INSERT INTO `videos` (`video_id`, `url`, `title`, `description`, `thumbnail`, `featured`) VALUES
-(2, 'https://www.youtube.com/watch?v=OLy4QVp68_U', 'Incubus - Incubus Drive (Live in New York City 2001)', 'Music video by Incubus performing Drive. (Live in New York City 2001)(C) 2002 SONY BMG MUSIC ENTERTAINMENT', 'http://i1.ytimg.com/vi/OLy4QVp68_U/default.jpg', 1),
-(5, 'https://www.youtube.com/watch?v=2NeW4TlB8oQ', 'Incubus - Incubus Just A Phase (Live in New York City 2001)', 'Music video by Incubus performing Just A Phase. (Live in New York City 2001)(C) 2002 SONY BMG MUSIC ENTERTAINMENT', 'http://i1.ytimg.com/vi/2NeW4TlB8oQ/default.jpg', 0),
-(6, 'https://www.youtube.com/watch?v=2NeW4TlB8oQ', 'Incubus - Incubus Just A Phase (Live in New York City 2001)', 'Music video by Incubus performing Just A Phase. (Live in New York City 2001)(C) 2002 SONY BMG MUSIC ENTERTAINMENT', 'http://i1.ytimg.com/vi/2NeW4TlB8oQ/default.jpg', 0),
-(7, 'https://www.youtube.com/watch?v=2NeW4TlB8oQ', 'Incubus - Incubus Just A Phase (Live in New York City 2001)', 'Music video by Incubus performing Just A Phase. (Live in New York City 2001)(C) 2002 SONY BMG MUSIC ENTERTAINMENT', 'http://i1.ytimg.com/vi/2NeW4TlB8oQ/default.jpg', 0);
+INSERT INTO `blog` (`blog_id`, `posted_date`, `title`, `body`, `quote`, `intro`) VALUES
+(1, '2014-07-24', 'Title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit quam, mollis vitae mattis vitae, elementum ut felis. Integer dapibus erat ut dui bibendum blandit. Nam laoreet bibendum enim in vestibulum. Duis sit amet eros at felis malesuada tincidunt. Cras ultricies accumsan lorem, non lacinia odio adipiscing et. Nulla facilisi. Proin ante eros, fringilla eget porttitor id, vehicula a sapien. Duis dignissim augue sapien, vitae varius risus iaculis sed. Duis non libero dictum, feugiat purus a, facilisis mauris. Praesent tincidunt elit non lectus varius aliquet. Maecenas rhoncus risus eget magna ullamcorper cursus. Sed congue sem justo, ac mattis mi adipiscing id. Vestibulum neque magna, pretium vel purus quis, mollis euismod libero.\r\n\r\nMorbi eu elit in tortor malesuada sollicitudin. Vestibulum pretium hendrerit tortor, non commodo lectus egestas ut. Nullam scelerisque tincidunt ultrices. Suspendisse potenti. Nullam a luctus sapien. Integer eu velit sit amet felis vulputate aliquet. Maecenas vestibulum facilisis nunc, vel malesuada augue dictum sit amet. Duis non purus ut odio lacinia fermentum. Donec quis mi lobortis, tincidunt ligula a, venenatis orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras nec nisl est. Proin imperdiet nunc augue, sit amet rhoncus ante dignissim at.\r\n\r\nMorbi eu elit in tortor malesuada sollicitudin. Vestibulum pretium hendrerit tortor, non commodo lectus egestas ut. Nullam scelerisque tincidunt ultrices. Suspendisse potenti. Nullam a luctus sapien. Integer eu velit sit amet felis vulputate aliquet. Maecenas vestibulum facilisis nunc, vel malesuada augue dictum sit amet. Duis non purus ut odio lacinia fermentum. Donec quis mi lobortis, tincidunt ligula a, venenatis orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras nec nisl est. Proin imperdiet nunc augue, sit amet rhoncus ante dignissim at.', 'parturient montes, nascetur ridiculus mus. Cras nec nisl est. Proin imperdiet nunc augue, sit amet rhoncus ante dignissim at.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit quam, mollis vitae mattis vitae, elementum ut felis. Integer dapibus erat ut dui bibendum blandit.');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

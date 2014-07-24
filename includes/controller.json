@@ -19,6 +19,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/blog$",
+        "controllerClass": "MainController",
+        "method": "renderBlog",
+        "authentication": false 
+    },
+    {
         "regex": "^/signup$",
         "controllerClass": "MainController",
         "method": "doSignup",

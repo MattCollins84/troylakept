@@ -64,6 +64,23 @@
     }
 
     // Render the results
+    static public function renderBlog($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['page'] = "blog";
+      $data['posts'] = Blog::getAll();
+      $data['quote'] = Quote::getRandom();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("blog", $data);
+          
+    }
+
+    // Render the results
     static public function doSignup($rest) {
       
       global $config;
