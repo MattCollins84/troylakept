@@ -321,11 +321,21 @@ class Blog extends DBExporter {
   * @return
   *   Array of objects
   */
-  static public function getAll() {
+  static public function getAll($year=false, $month=false, $limit=1000) {
     global $mysqlread;
     $output = array();
 
-    $query = "SELECT * FROM blog ORDER BY posted_date DESC";
+    $where = "WHERE ";
+    if ($year) {
+      $where .= " YEAR(posted_date) = '$year' AND ";
+      $limit = 1000;
+    }
+    if ($month) {
+      $where .= " MONTH(posted_date) = '$month' AND ";
+      $limit = 1000;
+    }
+
+    $query = "SELECT * FROM blog $where 1 ORDER BY posted_date DESC LIMIT 0, ".$limit;
 
     $rows = $mysqlread->getManyRows($query);
 
@@ -339,6 +349,24 @@ class Blog extends DBExporter {
     } else {
       return array();
     }
+  }
+
+  static public function getMonths() {
+
+    global $mysqlread;
+
+    $output = array();
+
+    $query = "SELECT DISTINCT YEAR( posted_date ) as year , MONTH( posted_date ) as month FROM blog";
+
+    $rows = $mysqlread->getManyRows($query);
+
+    if ($rows) {
+      return $rows;
+    } else {
+      return array();
+    }
+
   }
 
 }

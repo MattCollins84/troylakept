@@ -51,13 +51,13 @@
       
       global $config;
 
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
       $data = array();
       $data['page'] = "services";
       $data['services'] = Service::getAll("service_id ASC");
       $data['quote'] = Quote::getRandom();
-
-      $h = $rest->getHierarchy();    
-      $vars = $rest->getRequestVars();
 
       echo View::renderView("services", $data);
           
@@ -68,15 +68,42 @@
       
       global $config;
 
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $year = $h[1];
+      $month = $h[2];
+
       $data = array();
       $data['page'] = "blog";
-      $data['posts'] = Blog::getAll();
+      $data['posts'] = Blog::getAll($year, $month, 10);
+      $data['history'] = Blog::getMonths();
+      $data['months'] = array("1" => "January","2" => "February","3" => "March","4" => "April","5" => "May","6" => "June","7" => "July","8" => "August","9" => "September","10" => "October","11" => "November","12" => "December");
       $data['quote'] = Quote::getRandom();
+
+      echo View::renderView("blog", $data);
+          
+    }
+
+    // Render the results
+    static public function renderBlogPost($rest) {
+      
+      global $config;
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
-      echo View::renderView("blog", $data);
+      $year = $h[1];
+      $month = $h[2];
+
+      $data = array();
+      $data['page'] = "blog";
+      $data['post'] = new Blog($h[2]);
+      $data['history'] = Blog::getMonths();
+      $data['months'] = array("1" => "January","2" => "February","3" => "March","4" => "April","5" => "May","6" => "June","7" => "July","8" => "August","9" => "September","10" => "October","11" => "November","12" => "December");
+      $data['quote'] = Quote::getRandom();
+
+      echo View::renderView("blog_article", $data);
           
     }
 

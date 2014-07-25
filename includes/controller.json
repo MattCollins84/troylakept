@@ -25,6 +25,18 @@
         "authentication": false 
     },
     {
+        "regex": "^/blog/[0-9]{4}/[0-9]{1,2}$",
+        "controllerClass": "MainController",
+        "method": "renderBlog",
+        "authentication": false 
+    },
+    {
+        "regex": "^/blog/[0-9a-z-]+/[0-9]+$",
+        "controllerClass": "MainController",
+        "method": "renderBlogPost",
+        "authentication": false 
+    },
+    {
         "regex": "^/signup$",
         "controllerClass": "MainController",
         "method": "doSignup",
