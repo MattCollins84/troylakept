@@ -1,3 +1,4 @@
+<? $pd = new Parsedown(); ?>
 <!--Page Title-->
 <section id="page-title">
   <div class="container">
@@ -24,30 +25,8 @@
               <h3 class="gray"><i class="fa fa-pencil fa-2x blue"></i> <?=$data['post']->getTitle();?></h3>
               <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy <i class="fa fa-calendar"></i> <?=$data['post']->getPostedDate()->getAsEnglishDate();?></em></small></p>
               
-              <?
-              $quote = false;
-              $lines = explode("\n", $data['post']->getBody());
-              foreach ($lines as $l => $line):
-              ?>
-                <p class="gray"><?=$line;?></p>
-
-                <? if ($l > 1 && $quote == false): ?>
-                  <blockquote class="hero">
-                    <p><?=$data['post']->getQuote();?></p>
-                  </blockquote>
-                <? $quote = true; ?>
-                <? endif; ?>
-
-              <? endforeach; ?>
-
-              <? if ($quote == false): ?>
-                <blockquote class="hero">
-                  <p><?=$data['post']->getQuote();?></p>
-                </blockquote>
-              <? $quote = true; ?>
-              <? endif; ?>
-              <br />
-              <a class="btn-main" href="/blog/<?=$data['post']->getSEOTitle();?>/<?=$data['post']->getBlogId();?>">More</a>
+              <?=$pd->text($data['post']->getBody());?>
+              
             </div>
           </div>
         </article>

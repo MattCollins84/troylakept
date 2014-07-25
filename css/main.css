@@ -514,6 +514,10 @@ li.sign-up:hover {
   padding-bottom: 50px;
 }
 
+.red-content p, .red-content li {
+  color: white;
+}
+
 #team {
   background: url("/img/team-bg.jpg") no-repeat scroll center center #ffffff;
   padding-top: 80px;

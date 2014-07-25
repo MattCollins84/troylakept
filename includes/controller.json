@@ -67,6 +67,12 @@
         "authentication": "adminOnly" 
     },
     {
+        "regex": "^/admin/help$",
+        "controllerClass": "AdminController",
+        "method": "renderHelp",
+        "authentication": "adminOnly" 
+    },
+    {
         "regex": "^/admin/contacts$",
         "controllerClass": "AdminController",
         "method": "renderContacts",
@@ -160,6 +166,36 @@
         "regex": "^/admin/services/delete/[0-9]+$",
         "controllerClass": "ServicesController",
         "method": "deleteService",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/blog$",
+        "controllerClass": "BlogController",
+        "method": "renderBlog",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/blog/update/[0-9]+$",
+        "controllerClass": "BlogController",
+        "method": "addService",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/blog/add$",
+        "controllerClass": "BlogController",
+        "method": "addBlog",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/blog/delete/[0-9]+$",
+        "controllerClass": "BlogController",
+        "method": "deleteBlog",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/blog/[0-9]+$",
+        "controllerClass": "BlogController",
+        "method": "renderEditBlog",
         "authentication": "adminOnly" 
     }
   ]

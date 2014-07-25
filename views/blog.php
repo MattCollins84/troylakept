@@ -1,3 +1,4 @@
+<? $pd = new Parsedown(); ?>
 <!--Page Title-->
 <section id="page-title">
   <div class="container">
@@ -22,11 +23,11 @@
           <article class="blog mb30">
             <div class="row">
               <div class="col-md-12">
-                <h3 class="gray"><!--<i class="fa fa-pencil fa-2x blue"></i> --><?=$post->getTitle();?></h3>
+                <h3 class="gray"><!--<i class="fa fa-pencil fa-2x blue"></i> --><a href="/blog/<?=$post->getSEOTitle();?>/<?=$post->getBlogId();?>"><?=$post->getTitle();?></a></h3>
                 <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar"></i> <?=$post->getPostedDate()->getAsEnglishDate();?></em></small></p>
-                <p class="gray"><?=$post->getIntro();?></p>
+                <?=$pd->text($post->getIntro()); ?>
                 <br />
-                <a class="btn-main" href="/blog/<?=$post->getSEOTitle();?>/<?=$post->getBlogId();?>">More</a>
+                <a class="btn-main" href="/blog/<?=$post->getSEOTitle();?>/<?=$post->getBlogId();?>">Read more...</a>
               </div>
             </div>
           </article>

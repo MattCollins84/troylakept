@@ -18,7 +18,7 @@ class Blog extends DBExporter {
   protected $postedDate;
   protected $title;
   protected $body;
-  protected $quote;
+  protected $keywords;
   protected $intro;
 
   /**
@@ -151,25 +151,25 @@ class Blog extends DBExporter {
   }
 
   /**
-  * Return the value of Quote
+  * Return the value of Keywords
   *
   * @return
   *   a string value
   */
-  public function getQuote() {
-    return $this->quote;
+  public function getKeywords() {
+    return $this->keywords;
   }
 
   /**
-  * Set the value of Quote
+  * Set the value of Keywords
   *
-  * @param $quote
+  * @param $keywords
   *   a string value
   */    
-  public function setQuote($quote) {
-    if($quote!=$this->quote) {
+  public function setKeywords($keywords) {
+    if($keywords!=$this->keywords) {
       $this->markDirty();          
-      $this->quote = $quote;
+      $this->keywords = $keywords;
     }
   }
 
@@ -210,7 +210,7 @@ class Blog extends DBExporter {
     $this->setPostedDate($p['posted_date']);
     $this->setTitle($p['title']);
     $this->setBody($p['body']);
-    $this->setQuote($p['quote']);
+    $this->setKeywords($p['keywords']);
     $this->setIntro($p['intro']);
     $this->markUnchanged();
   }
@@ -252,7 +252,7 @@ class Blog extends DBExporter {
                       posted_date = '".mysql_escape_string($this->getPostedDate()->getAsMySQLDate())."',
                       title = '".mysql_escape_string($this->getTitle())."',
                       body = '".mysql_escape_string($this->getBody())."',
-                      quote = '".mysql_escape_string($this->getQuote())."',
+                      keywords = '".mysql_escape_string($this->getKeywords())."',
                       intro = '".mysql_escape_string($this->getIntro())."'";
     $mysqlwrite->doQuery($query);
     $this->markUnchanged();
@@ -286,7 +286,7 @@ class Blog extends DBExporter {
                 SET posted_date = '".mysql_escape_string($this->getPostedDate()->getAsMySQLDate())."',
                     title = '".mysql_escape_string($this->getTitle())."',
                     body = '".mysql_escape_string($this->getBody())."',
-                    quote = '".mysql_escape_string($this->getQuote())."',
+                    keywords = '".mysql_escape_string($this->getKeywords())."',
                     intro = '".mysql_escape_string($this->getIntro())."'";
     $this->setBlogId($mysqlwrite->doQuery($query));
     $this->markUnchanged();
@@ -357,7 +357,7 @@ class Blog extends DBExporter {
 
     $output = array();
 
-    $query = "SELECT DISTINCT YEAR( posted_date ) as year , MONTH( posted_date ) as month FROM blog";
+    $query = "SELECT DISTINCT YEAR( posted_date ) as year , MONTH( posted_date ) as month FROM blog ORDER BY year, month DESC";
 
     $rows = $mysqlread->getManyRows($query);
 

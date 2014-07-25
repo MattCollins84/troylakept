@@ -21,7 +21,7 @@
       $data['quote'] = Quote::getRandom();
       $data['videos'] = Video::getAll();
       $data['about'] = new Content(1);
-      $data['about'] = explode("\n", $data['about']->getContent());
+      $data['about'] = $data['about']->getContent();
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
@@ -66,7 +66,7 @@
     // Render the results
     static public function renderBlog($rest) {
       
-      global $config;
+      global $config, $pd;
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
@@ -102,6 +102,7 @@
       $data['history'] = Blog::getMonths();
       $data['months'] = array("1" => "January","2" => "February","3" => "March","4" => "April","5" => "May","6" => "June","7" => "July","8" => "August","9" => "September","10" => "October","11" => "November","12" => "December");
       $data['quote'] = Quote::getRandom();
+      $data['keywords'] = $data['post']->getKeywords();
 
       echo View::renderView("blog_article", $data);
           

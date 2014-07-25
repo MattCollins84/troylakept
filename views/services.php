@@ -1,3 +1,4 @@
+<? $pd = new Parsedown(); ?>
 <section id="page-title">
   <div class="container">
     <div class="row">
@@ -39,8 +40,8 @@
         <div class="col-md-9">
           <h3><span class="white"><?=$s->getName();?></span></h3>
           <p class="lead white"><?=$s->getHeadline();?></p>
-          <p class="white"><?=$s->getDescription();?></p><br />
-          <a class="btn-main" href="/contact">Find out more!</a>
+          <?=$pd->text($s->getDescription());?>
+          <br /><a class="btn-main" href="/contact">Find out more!</a>
         </div>
       </div>
       
@@ -56,7 +57,8 @@
         <div class="col-md-9">
           <h3><span class="red"><?=$s->getName();?></span></h3>
           <p class="lead"><?=$s->getHeadline();?></p>
-          <p class="gray"><?=$s->getDescription();?></p><br />
+          <?=$pd->text($s->getDescription());?>
+          <br />
           <a class="btn-main" href="/contact">Find out more!</a>
         </div>
         <div class="col-md-3">

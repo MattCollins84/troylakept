@@ -60,6 +60,20 @@
           
     }
 
+    // Render the dashboard
+    static public function renderHelp($rest) {
+      
+      global $config;
+
+      $data = array();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("admin_help", $data, false, true);
+          
+    }
+
   }
 
 ?>

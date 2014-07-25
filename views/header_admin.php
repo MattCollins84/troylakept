@@ -40,8 +40,10 @@
             <li><a href="/admin/quotes">Quotes</a></li>
             <li><a href="/admin/videos">Videos</a></li>
             <li><a href="/admin/services">Services</a></li>
+            <li><a href="/admin/blog">Blog</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li class=""><a href="/admin/help" target="_blank">Help</a></li>
             <li class="active"><a href="/admin/logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->

@@ -56,9 +56,8 @@
 
         <h1 class="dark-gray pb20">About Troy Lake PT</h1>
         
-        <? foreach ($data['about'] as $line): ?>
-          <p class="gray"><?=$line;?></p>
-        <? endforeach; ?>
+        <?=$pd->text($data['about']);?>
+        
         <p><a class="btn btn-danger btn-lg" href="#">Get In Touch</a></p>
 
       </div>

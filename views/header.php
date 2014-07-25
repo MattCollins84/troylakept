@@ -1,8 +1,9 @@
+<? $pd = new Parsedown(); ?>
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
   <title>Troy Lake PT | Stop wishing for it. Start working for it.</title>
-  <meta name="keywords" content="troy lake pt, personal training, bootcamp, fit camp, diet plans, weight loss, insanity, workout">
+  <meta name="keywords" content="<?=($data['keywords']?$data['keywords']:"troy lake pt, personal training, bootcamp, fit camp, diet plans, weight loss, insanity, workout");?>">
   <meta name="description" content="Website of Troy Lake, Personal Trainer. Based in the ">
   <meta name="viewport" content="width=device-width">
   

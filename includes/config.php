@@ -5,6 +5,7 @@ require_once("includes/Quote.php");
 require_once("includes/Video.php");
 require_once("includes/Service.php");
 require_once("includes/Content.php");
+require_once("includes/Parsedown.php");
 require_once("includes/Blog.php");
 require_once("includes/functions.php");
 
@@ -14,6 +15,9 @@ date_default_timezone_set("UTC");
 global $config;
 global $mysqlread;
 global $mysqlwrite;
+global $pd;
+
+$pd = new Parsedown();
 
 $json = json_decode(file_get_contents('includes/config.json'), true);
 $hostname = $_SERVER['HTTP_HOST'];
