@@ -37,13 +37,6 @@ class Email  {
 
   }
 
-  // forgot password email
-  static public function forgotEmail($to, $subject, $body, $from) {
-
-    return Email::sendEmail($to, $subject, $body, $from);
-
-  }
-
 }
 
 ?>

@@ -128,6 +128,33 @@
     }
 
     // Render the results
+    static public function sendContact($rest) {
+      
+      global $config;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $errors = Validation::required(array("name", "subject", "message"), $vars);
+
+      $contact = true;
+      if (!$vars['phone'] && !$vars['email']) {
+        $contact = false;
+      }
+
+      if ($errors || $contact == false) {
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Please complete the Name, Subject and Message fields, along with at least one of your email address or phone number"
+        ));
+        exit;
+      }
+
+      var_dump($vars);
+          
+    }
+
+    // Render the results
     static public function doSignup($rest) {
       
       global $config;
