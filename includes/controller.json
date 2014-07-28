@@ -25,6 +25,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/contact$",
+        "controllerClass": "MainController",
+        "method": "renderContact",
+        "authentication": false 
+    },
+    {
         "regex": "^/blog/[0-9]{4}/[0-9]{1,2}$",
         "controllerClass": "MainController",
         "method": "renderBlog",

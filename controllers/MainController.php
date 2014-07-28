@@ -109,6 +109,25 @@
     }
 
     // Render the results
+    static public function renderContact($rest) {
+      
+      global $config;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $year = $h[1];
+      $month = $h[2];
+
+      $data = array();
+      $data['page'] = "contact";
+      $data['quote'] = Quote::getRandom();
+
+      echo View::renderView("contact", $data);
+          
+    }
+
+    // Render the results
     static public function doSignup($rest) {
       
       global $config;
