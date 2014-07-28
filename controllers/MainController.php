@@ -174,6 +174,11 @@
         $c->markNew(true);
         $c->save();
       }
+
+      echo json_encode(array(
+        "success" => true
+      ));
+      exit;
           
     }
 
@@ -216,6 +221,20 @@
         "success" => true
       ));
       exit;
+          
+    }
+
+    // Render the results
+    static public function renderThanks($rest) {
+      
+      global $config;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data = array();
+
+      echo View::renderView("thanks", $data);
           
     }
 

@@ -31,6 +31,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/thanks$",
+        "controllerClass": "MainController",
+        "method": "renderThanks",
+        "authentication": false 
+    },
+    {
         "regex": "^/contact/send$",
         "controllerClass": "MainController",
         "method": "sendContact",
