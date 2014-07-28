@@ -15,6 +15,8 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Phone</th>
+            <th>Active</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +24,8 @@
           <tr>
             <td><?=$c->getName();?></td>
             <td><?=$c->getEmail();?></td>
+            <td><?=$c->getPhone();?></td>
+            <td><?=($c->getActive()?"<i class='glyphicon glyphicon-ok'></i>":"<i class='glyphicon glyphicon-remove'></i>");?></td>
           </tr>
           <? endforeach; ?>
         </tbody>

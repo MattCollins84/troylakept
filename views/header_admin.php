@@ -40,6 +40,7 @@
             <li><a href="/admin/quotes">Quotes</a></li>
             <li><a href="/admin/videos">Videos</a></li>
             <li><a href="/admin/services">Services</a></li>
+            <li><a href="/admin/results">Results</a></li>
             <li><a href="/admin/blog">Blog</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

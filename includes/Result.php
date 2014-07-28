@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @Contact.php
+* @Result.php
 *   A description of this class goes here
 */
 
@@ -9,54 +9,55 @@ require_once("includes/SuperDate.php");
 require_once("includes/DBExporter.php");
 
 /**
-* Definition of the Contact class
+* Definition of the Result class
 */
-class Contact extends DBExporter {
+class Result extends DBExporter {
 
   // members
-  protected $contactId;
+  protected $resultId;
   protected $name;
-  protected $email;
-  protected $phone;
-  protected $active;
+  protected $age;
+  protected $goals;
+  protected $story;
+  protected $img;
 
   /**
-  * Construct the Contact object
+  * Construct the Result object
   *
-  * @param $contactId
+  * @param $resultId
   *   The primary key for this object
   */
-  public function __construct($contactId=false, $loadAll=false) {
+  public function __construct($resultId=false, $loadAll=false) {
     global $mysqlread;
     if ($loadAll) {
       //code here to build up arrays of related objects
     }
 
-    if($contactId) {
-      $this->loadFromDB($contactId);
+    if($resultId) {
+      $this->loadFromDB($resultId);
     }
   }
 
   /**
-  * Return the value of ContactId
+  * Return the value of ResultId
   *
   * @return
   *   an integer value
   */
-  public function getContactId() {
-    return intval($this->contactId);
+  public function getResultId() {
+    return intval($this->resultId);
   }
 
   /**
-  * Set the value of ContactId
+  * Set the value of ResultId
   *
-  * @param $contactId
+  * @param $resultId
   *   an integer value
   */      
-  public function setContactId($contactId) {
-    if($contactId!=$this->contactId) {
+  public function setResultId($resultId) {
+    if($resultId!=$this->resultId) {
       $this->markDirty();          
-      $this->contactId = intval($contactId);
+      $this->resultId = intval($resultId);
     }
   }
 
@@ -84,81 +85,94 @@ class Contact extends DBExporter {
   }
 
   /**
-  * Return the value of Email
+  * Return the value of Age
   *
   * @return
-  *   a string value
+  *   an integer value
   */
-  public function getEmail() {
-    return $this->email;
+  public function getAge() {
+    return intval($this->age);
   }
 
   /**
-  * Set the value of Email
+  * Set the value of Age
   *
-  * @param $email
-  *   a string value
-  */    
-  public function setEmail($email) {
-    if($email!=$this->email) {
-      $this->markDirty();          
-      $this->email = $email;
-    }
-  }
-
-  /**
-  * Return the value of Phone
-  *
-  * @return
-  *   a string value
-  */
-  public function getPhone() {
-    return $this->phone;
-  }
-
-  /**
-  * Set the value of Phone
-  *
-  * @param $phone
-  *   a string value
-  */    
-  public function setPhone($phone) {
-    if($phone!=$this->phone) {
-      $this->markDirty();          
-      $this->phone = $phone;
-    }
-  }
-
-  /**
-  * Return the value of tinyint Active
-  *
-  * @return
-  *   a BOOL value
-  */
-  public function getActive() {
-    if ($this->active) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  /**
-  * Set the value of Active
-  *
-  * @param $active
-  *   a BOOL value
+  * @param $age
+  *   an integer value
   */      
-  public function setActive($active) {
-    if($active!=$this->active) {
-      $this->markDirty();  
-      
-      if ($active) {
-        $this->active = true;
-      } else {
-        $this->active = false;
-      }
-      
+  public function setAge($age) {
+    if($age!=$this->age) {
+      $this->markDirty();          
+      $this->age = intval($age);
+    }
+  }
+
+  /**
+  * Return the value of Goals
+  *
+  * @return
+  *   a string value
+  */
+  public function getGoals() {
+    return $this->goals;
+  }
+
+  /**
+  * Set the value of Goals
+  *
+  * @param $goals
+  *   a string value
+  */    
+  public function setGoals($goals) {
+    if($goals!=$this->goals) {
+      $this->markDirty();          
+      $this->goals = $goals;
+    }
+  }
+
+  /**
+  * Return the value of Story
+  *
+  * @return
+  *   a string value
+  */
+  public function getStory() {
+    return $this->story;
+  }
+
+  /**
+  * Set the value of Story
+  *
+  * @param $story
+  *   a string value
+  */    
+  public function setStory($story) {
+    if($story!=$this->story) {
+      $this->markDirty();          
+      $this->story = $story;
+    }
+  }
+
+  /**
+  * Return the value of Img
+  *
+  * @return
+  *   a string value
+  */
+  public function getImg() {
+    return $this->img;
+  }
+
+  /**
+  * Set the value of Img
+  *
+  * @param $img
+  *   a string value
+  */    
+  public function setImg($img) {
+    if($img!=$this->img) {
+      $this->markDirty();          
+      $this->img = $img;
     }
   }
 
@@ -172,11 +186,12 @@ class Contact extends DBExporter {
   *   n/a
   */
   public function loadFromArray($p) {  
-    $this->setContactId($p['contact_id']);
+    $this->setResultId($p['result_id']);
     $this->setName($p['name']);
-    $this->setEmail($p['email']);
-    $this->setPhone($p['phone']);
-    $this->setActive($p['active']);
+    $this->setAge($p['age']);
+    $this->setGoals($p['goals']);
+    $this->setStory($p['story']);
+    $this->setImg($p['img']);
     $this->markUnchanged();
   }
   
@@ -193,7 +208,7 @@ class Contact extends DBExporter {
 
     global $mysqlread;
 
-    $query = "SELECT * FROM contacts WHERE contact_id = '".mysql_escape_string($id)."'";
+    $query = "SELECT * FROM results WHERE result_id = '".mysql_escape_string($id)."'";
     $p = $mysqlread->getSingleRow($query);
     if($p) {
       $this->loadFromArray($p);
@@ -212,12 +227,13 @@ class Contact extends DBExporter {
 
     global $mysqlwrite;
 
-    $query = "REPLACE INTO contacts
-                  SET contact_id = '".mysql_escape_string($this->getContactId())."',
+    $query = "REPLACE INTO results
+                  SET result_id = '".mysql_escape_string($this->getResultId())."',
                       name = '".mysql_escape_string($this->getName())."',
-                      email = '".mysql_escape_string($this->getEmail())."',
-                      phone = '".mysql_escape_string($this->getPhone())."',
-                      active = '".mysql_escape_string($this->getActive())."'";
+                      age = '".mysql_escape_string($this->getAge())."',
+                      goals = '".mysql_escape_string($this->getGoals())."',
+                      story = '".mysql_escape_string($this->getStory())."',
+                      img = '".mysql_escape_string($this->getImg())."'";
     $mysqlwrite->doQuery($query);
     $this->markUnchanged();
   }
@@ -232,7 +248,7 @@ class Contact extends DBExporter {
 
     global $mysqlwrite;
 
-    $query = "DELETE FROM contacts WHERE contact_id = '".mysql_escape_string($this->getContactId())."'";
+    $query = "DELETE FROM results WHERE result_id = '".mysql_escape_string($this->getResultId())."'";
     $mysqlwrite->doQuery($query);
   }
 
@@ -246,12 +262,13 @@ class Contact extends DBExporter {
 
     global $mysqlwrite;
 
-    $query = "INSERT INTO contacts
+    $query = "INSERT INTO results
                 SET name = '".mysql_escape_string($this->getName())."',
-                    email = '".mysql_escape_string($this->getEmail())."',
-                    phone = '".mysql_escape_string($this->getPhone())."',
-                    active = '".mysql_escape_string($this->getActive())."'";
-    $this->setContactId($mysqlwrite->doQuery($query));
+                    age = '".mysql_escape_string($this->getAge())."',
+                    goals = '".mysql_escape_string($this->getGoals())."',
+                    story = '".mysql_escape_string($this->getStory())."',
+                    img = '".mysql_escape_string($this->getImg())."'";
+    $this->setResultId($mysqlwrite->doQuery($query));
     $this->markUnchanged();
   }
 
@@ -266,7 +283,7 @@ class Contact extends DBExporter {
 
     global $mysqlread;
 
-    $query = "SELECT count(*) as cnt FROM contacts WHERE contact_id = '".mysql_escape_string($id)."'";
+    $query = "SELECT count(*) as cnt FROM results WHERE result_id = '".mysql_escape_string($id)."'";
 
     if ($mysqlread->getSingleField($query)) {
       return true;
@@ -274,7 +291,7 @@ class Contact extends DBExporter {
       return false;
     }
   }
-  
+
 
   /**
   * Return all objects of this type from DB
@@ -292,19 +309,19 @@ class Contact extends DBExporter {
     if ($sortby) {
       $orderby = "ORDER BY ".$sortby;
     }
-    $query = "SELECT * FROM contacts $orderby";
+    $query = "SELECT * FROM results $orderby";
 
     $rows = $mysqlread->getManyRows($query);
 
     if ($rows) {
       foreach ($rows as $row) {
-        $o = new Contact();
+        $o = new Result();
         $o->loadFromArray($row);
         $output[] = $o;
       }
       return $output;
     } else {
-      return false;
+      return array();
     }
   }
 

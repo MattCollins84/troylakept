@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 25, 2014 at 04:50 PM
+-- Generation Time: Jul 28, 2014 at 05:24 PM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -56,15 +56,20 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `contact_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `active` tinyint(4) NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `contacts`
 --
 
-INSERT INTO `contacts` (`contact_id`, `name`, `email`) VALUES
-(1, 'Matt', 'matt@strikesandgutters.com');
+INSERT INTO `contacts` (`contact_id`, `name`, `email`, `phone`, `active`) VALUES
+(1, 'Matt', 'matt@strikesandgutters.com', '', 0),
+(3, 'Dave', 'dave@dave.com', '07731309552', 1),
+(4, 'john', 'john@test.com', '07731309552', 1),
+(5, 'john', 'trev@test.com', '07731309552', 1);
 
 -- --------------------------------------------------------
 
@@ -106,6 +111,22 @@ CREATE TABLE IF NOT EXISTS `quotes` (
 INSERT INTO `quotes` (`quote_id`, `quote`, `name`) VALUES
 (1, 'Troy helped me achieve all of my goals, I managed to lose weight, tone up & I have never felt better. Can''t wait for my holiday now!', 'Tracey, Redcar'),
 (3, 'My One on One training with Troy really helped me bulk up in time for my Iron Man event. I couldn''t have finished the course if it wasn''t for Troy!', 'Dave, Saltburn');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `results`
+--
+
+CREATE TABLE IF NOT EXISTS `results` (
+  `result_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
+  `goals` text NOT NULL,
+  `story` text NOT NULL,
+  `img` varchar(255) NOT NULL,
+  PRIMARY KEY (`result_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

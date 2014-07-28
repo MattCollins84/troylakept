@@ -5,6 +5,7 @@
    */
   
   require_once("includes/Rest.php");
+  require_once("includes/Email.php");
   require_once("controllers/Controller.php");
 
   
@@ -135,22 +136,44 @@
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
-      $errors = Validation::required(array("name", "subject", "message"), $vars);
+      $errors = Validation::required(array("name", "subject", "message", "email"), $vars);
 
-      $contact = true;
-      if (!$vars['phone'] && !$vars['email']) {
-        $contact = false;
-      }
-
-      if ($errors || $contact == false) {
+      if ($errors || !Validation::email($vars['email'])) {
         echo json_encode(array(
           "success" => false,
-          "error" => "Please complete the Name, Subject and Message fields, along with at least one of your email address or phone number"
+          "error" => "Please complete the Name, Subject, Email and Message fields.\nPlease supply a valid email address."
         ));
         exit;
       }
 
-      var_dump($vars);
+      $body = "";
+      $body .= "Name:\t\t\t".$vars['name']."\n";
+      if ($vars['phone']) {
+        $body .= "Phone:\t\t\t".$vars['phone']."\n";
+      }
+      if ($vars['email']) {
+        $body .= "Email:\t\t\t".$vars['email']."\n";
+      }
+      if ($vars['where']) {
+        $body .= "Heard of you from:\t\t".$vars['where']."\n";
+      }
+      $body .= "\n\n";
+
+      $body .= $vars['message'];
+
+
+
+      $send = Email::contactEmail($config['support_email'], $vars['subject'], $body, $vars['email']);
+
+      if ($vars['signup']) {
+        $c = new Contact();
+        $c->setName($vars['name']);
+        $c->setEmail($vars['email']);
+        $c->setPhone($vars['phone']);
+        $c->setActive(true);
+        $c->markNew(true);
+        $c->save();
+      }
           
     }
 
@@ -185,6 +208,7 @@
       $c = new Contact();
       $c->setName($vars['name']);
       $c->setEmail($vars['email']);
+      $c->setActive(true);
       $c->markNew(true);
       $c->save();
 

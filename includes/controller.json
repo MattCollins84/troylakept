@@ -209,6 +209,12 @@
         "controllerClass": "BlogController",
         "method": "renderEditBlog",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/results$",
+        "controllerClass": "ResultsController",
+        "method": "renderResults",
+        "authentication": "adminOnly" 
     }
   ]
 }
