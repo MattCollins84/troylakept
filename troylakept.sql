@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2014 at 12:55 PM
+-- Generation Time: Jul 29, 2014 at 02:23 PM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -90,6 +90,28 @@ CREATE TABLE IF NOT EXISTS `content` (
 
 INSERT INTO `content` (`content_id`, `content`, `type`) VALUES
 (1, 'Lorem ipsum dolor sit **amet**, consectetur adipiscing elit. Sed eget porta ante. Donec rutrum, massa vitae dapibus bibendum, ligula sapien lobortis neque, nec tincidunt orci urna a lacus. Fusce non lacus congue, tincidunt ante eget, hendrerit nisi. Fusce et vehicula dolor, in mattis augue. Nulla tempor eros nulla, vitae ullamcorper metus ullamcorper nec.\r\n\r\nNulla aliquet orci justo. Donec eu nibh orci. Vivamus tortor quam, aliquet eu iaculis eget, placerat vel neque. Ut eu facilisis erat, id sodales libero. Aenean malesuada justo ac gravida interdum. Quisque tincidunt hendrerit eleifend. Vestibulum aliquam felis in convallis eleifend. Suspendisse imperdiet mauris mauris, at mollis diam sagittis quis. Fusce vehicula eros nec ante ullamcorper, id sagittis nisl egestas. Nulla vitae nunc venenatis orci varius tempor sit amet sit amet odio.', 'text');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `media`
+--
+
+CREATE TABLE IF NOT EXISTS `media` (
+  `media_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `intro` text NOT NULL,
+  `url` text NOT NULL,
+  PRIMARY KEY (`media_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `media`
+--
+
+INSERT INTO `media` (`media_id`, `title`, `intro`, `url`) VALUES
+(1, 'I was in the news', 'hey, look! **I was in the news!**\r\n\r\n_awesome_', 'http://www.google.com'),
+(2, 'I was in the news', 'hey, look! **I was in the news!**\r\n\r\n_awesome_', 'http://www.google.com');
 
 -- --------------------------------------------------------
 

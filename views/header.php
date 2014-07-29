@@ -52,6 +52,7 @@
             <li class="<?=($data['page']=="results"?"active":"");?>"><a href="/results">Results</a></li>
             <li class="<?=($data['page']=="services"?"active":"");?>"><a href="/services">Services</a></li>
             <li class="<?=($data['page']=="blog"?"active":"");?>"><a href="/blog">Blog</a></li>
+            <li class="<?=($data['page']=="media"?"active":"");?>"><a href="/media">Media</a></li>
             <li class="sign-up"><a href="/contact"><span class="white"> Get In Touch</span></a></li>
           </ul>
         </div><!--/.navbar-collapse -->

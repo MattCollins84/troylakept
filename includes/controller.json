@@ -37,6 +37,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/media$",
+        "controllerClass": "MainController",
+        "method": "renderMedia",
+        "authentication": false 
+    },
+    {
         "regex": "^/thanks$",
         "controllerClass": "MainController",
         "method": "renderThanks",

@@ -49,6 +49,23 @@
     }
 
     // Render the results
+    static public function renderMedia($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['page'] = "media";
+      $data['media'] = Media::getAll();
+      $data['quote'] = Quote::getRandom();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("media", $data);
+          
+    }
+
+    // Render the results
     static public function renderResultsProfile($rest) {
       
       global $config;
