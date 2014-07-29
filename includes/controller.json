@@ -221,6 +221,12 @@
         "controllerClass": "ResultsController",
         "method": "renderResults",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/results/upload$",
+        "controllerClass": "ResultsController",
+        "method": "uploadResults",
+        "authentication": "adminOnly" 
     }
   ]
 }
