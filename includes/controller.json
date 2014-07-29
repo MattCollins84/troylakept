@@ -13,6 +13,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/results/[0-9a-z-]+/[0-9]+$",
+        "controllerClass": "MainController",
+        "method": "renderResultsProfile",
+        "authentication": false 
+    },
+    {
         "regex": "^/services$",
         "controllerClass": "MainController",
         "method": "renderServices",
@@ -223,9 +229,21 @@
         "authentication": "adminOnly" 
     },
     {
+        "regex": "^/admin/result/[0-9]+$",
+        "controllerClass": "ResultsController",
+        "method": "renderEditResult",
+        "authentication": "adminOnly" 
+    },
+    {
         "regex": "^/admin/results/upload$",
         "controllerClass": "ResultsController",
         "method": "uploadResults",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/results/delete/[0-9]+$",
+        "controllerClass": "ResultsController",
+        "method": "deleteResult",
         "authentication": "adminOnly" 
     }
   ]

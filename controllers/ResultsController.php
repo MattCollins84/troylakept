@@ -11,6 +11,10 @@
   Class ResultsController extends Controller {
 
     const MAX_SIZE = 3000;
+    const MAX_HEIGHT_THUMB = 238;
+    const MAX_WIDTH_THUMB = 366;
+    const MAX_HEIGHT = 480;
+    const MAX_WIDTH = 640;
 
     // Render the dashboard
     static public function renderResults($rest) {
@@ -41,75 +45,54 @@
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
-      $upload = true;
       $file = $_FILES['image'];
+      $upload = ($file['tmp_name']?true:false);
       $msg = array();
       // extension
       $ext = ResultsController::getExtension($file['name']);
-      if (!in_array($ext, array("jpg", "jpeg", "png"))) {
+      if ($upload && !in_array($ext, array("jpg", "jpeg", "png"))) {
         $upload = false;
         $msg[] = "File type is not supported";
       }
 
       // size
       $filesize = filesize($file['tmp_name']);
-      if ($filesize > (ResultsController::MAX_SIZE * 1024)) {
+      if ($upload && $filesize > (ResultsController::MAX_SIZE * 1024)) {
         $upload = false;
         $msg[] = "File size is over 4Mb";
       }
 
       if ($upload) {
 
-        list($width,$height)=getimagesize($file['tmp_name']);
+        $path = rand(0, 10000)."_".rand(0, 10000).".".$ext;
 
-        // png
-        if ($ext == "png") {
-          $src = imagecreatefrompng($file['tmp_name']);
-        }
+        $filename_thumb = Image::createImage($file, ResultsController::MAX_WIDTH_THUMB, ResultsController::MAX_HEIGHT_THUMB, "thumb_".$path);
 
-        else if (in_array($ext, array("jpg", "jpeg"))) {
-          $src = imagecreatefromjpeg($file['tmp_name']);
-        }
-
-        else {
-          $src = imagecreatefromgif($file['tmp_name']);
-        }
-
-        // new dimensions
-        $newwidth=325;
-        $newheight=($height/$width)*$newwidth;
-        $tmp=imagecreatetruecolor($newwidth,$newheight);
-
-        // resize
-        imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight,$width,$height);
-
-        // filename
-        $new_filename = "uploads/".rand(0, 1000)."_".rand(0, 1000).".".$ext;
-
-        // create!
-        imagejpeg($tmp,$new_filename,100);
-
-        // clean up
-        imagedestroy($src);
-        imagedestroy($tmp);
+        $filename = Image::createImage($file, ResultsController::MAX_WIDTH, ResultsController::MAX_HEIGHT, $path);
 
       }
 
-      $r = new Result();
+      $r = new Result($vars['result_id']);
       $r->setName($vars['name']);
       $r->setGoals($vars['goals']);
       $r->setStory($vars['story']);
-      $r->setImg($new_filename);
+      $r->setIntro($vars['intro']);
+      
+      if ($upload) {
+        $r->setImg($filename);
+      }
 
-      $r->markNew();
+      if (!$r->getResultId()) {
+        $r->markNew();
+      }
       $r->save();
 
       if ($r->getResultId()) {
-        $_SESSION['msg'] = "Result added successfully.";
+        $_SESSION['msg'] = "Customer story ".($vars['result_id']?"edited":"added")." successfully.";
       }
 
       else {
-        $_SESSION['msg'] = "There was a problem adding this result.";
+        $_SESSION['msg'] = "There was a problem ".($vars['result_id']?"editing":"adding")." this customer story.";
       }
 
       if ($msg) {
@@ -129,6 +112,48 @@
       return $ext;
     }
 
+    // Render the dashboard
+    static public function deleteResult($rest) {
+      
+      global $config;
+
+      $data = array();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data['id'] = $h[3];
+
+      $q = new Result($data['id']);
+      $q->markForDeletion();
+      $q->save();
+
+      $_SESSION['msg'] = "Customer story deleted successfully.";
+
+      echo json_encode(array(
+        "success" => true
+      ));
+      exit;
+          
+    }
+
+    // Render the dashboard
+    static public function renderEditResult($rest) {
+      
+      global $config;
+
+      $data = array();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data['id'] = $h[2];
+
+      $data['result'] = new Result($data['id']);
+
+      echo View::renderView("admin_edit_result", $data, false, true);
+          
+    }
   }
 
 ?>

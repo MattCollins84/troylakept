@@ -38,12 +38,30 @@
 
       $data = array();
       $data['page'] = "results";
+      $data['results'] = Result::getAll();
       $data['quote'] = Quote::getRandom();
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
       echo View::renderView("results", $data);
+          
+    }
+
+    // Render the results
+    static public function renderResultsProfile($rest) {
+      
+      global $config;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data = array();
+      $data['page'] = "results";
+      $data['result'] = new Result($h[2]);
+      $data['quote'] = Quote::getRandom();
+
+      echo View::renderView("results_profile", $data);
           
     }
 

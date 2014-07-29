@@ -40,7 +40,7 @@
           <input name="headline" type="text" class="form-control" placeholder="e.g. The best way to achieve your goals">
         </div>
         <div class="form-group">
-          <label for="quote">Description</label><br />
+          <label for="quote">Description <i class="glyphicon glyphicon-pencil"> </i></label><br />
           <textarea name="description" class="form-control" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>

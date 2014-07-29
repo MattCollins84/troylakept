@@ -17,6 +17,8 @@
       <p>Below are some simple examples of Markdown, and how to use them.</p>
       <p>For a full breakdown of everything that is available, check out <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">this website</a></p>
 
+      <p>All inputs that are compatible with Markdown are highlighted with this icon: <i class="glyphicon glyphicon-pencil"> </i></p>
+
     </div>
 
     <div class="col-sm-12">

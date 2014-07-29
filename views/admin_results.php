@@ -43,14 +43,18 @@
               <input name="goals" id="goals" type="text" class="form-control" placeholder="e.g. weight loss, toning up">
             </div>
             <div class="form-group">
+              <label for="intro">Introduction </label><br />
+              <textarea name="intro" id="intro" class="form-control" rows="5"></textarea>
+            </div>
+            <div class="form-group">
               <label for="image">Upload Image<br />
               <input type="file" id="image" name="image" />
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="story">Story</label><br />
-              <textarea name="story" id="story" class="form-control" rows="10"></textarea>
+              <label for="story">Story <i class="glyphicon glyphicon-pencil"> </i></label><br />
+              <textarea name="story" id="story" class="form-control" rows="16"></textarea>
             </div>
           </div>
           <div class="col-sm-12">
@@ -64,6 +68,12 @@
   </div>
 
   <div class="row">
+
+    <div class="col-sm-12">
+
+      <h2>Manage existing customer stories</h2>
+
+    </div>
 
     <div class="col-sm-12">
 
@@ -107,7 +117,8 @@
       name: $("form #name").val(),
       goals: $("form #goals").val(),
       image: $("form #image").val(),
-      story: $("form #story").val()
+      story: $("form #story").val(),
+      intro: $("form #intro").val()
     }
 
     var missing = [];
@@ -145,7 +156,7 @@
 
     var id = $(this).attr("data-id");
 
-    if (confirm("Are you sure you want to delete this result?") === true) {
+    if (confirm("Are you sure you want to delete this customer story?") === true) {
 
       $.post("/admin/results/delete/"+id, function(data) {
         

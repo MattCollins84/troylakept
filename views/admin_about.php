@@ -24,7 +24,7 @@
 
     <div class="col-sm-12">
 
-      <h2>About</h2>
+      <h2>About <i class="glyphicon glyphicon-pencil"> </i></h2>
 
       <form role="form" id="about">
         <div class="form-group">

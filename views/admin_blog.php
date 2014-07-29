@@ -43,13 +43,13 @@
               <input name="keywords" type="text" class="form-control" placeholder="e.g. weight loss, toning, bulk up">
             </div>
             <div class="form-group">
-              <label for="intro">Introduction <em>(Shown on main blog page)</em></label><br />
+              <label for="intro">Introduction <em>(Shown on main blog page)</em> <i class="glyphicon glyphicon-pencil"> </i></label><br />
               <textarea name="intro" class="form-control" rows="3"></textarea>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="body">Body</label><br />
+              <label for="body">Body <i class="glyphicon glyphicon-pencil"> </i></label><br />
               <textarea name="body" class="form-control" rows="10"></textarea>
             </div>
           </div>

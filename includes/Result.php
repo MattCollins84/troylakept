@@ -16,7 +16,7 @@ class Result extends DBExporter {
   // members
   protected $resultId;
   protected $name;
-  protected $age;
+  protected $intro;
   protected $goals;
   protected $story;
   protected $img;
@@ -85,25 +85,25 @@ class Result extends DBExporter {
   }
 
   /**
-  * Return the value of Age
+  * Return the value of Intro
   *
   * @return
-  *   an integer value
+  *   a string value
   */
-  public function getAge() {
-    return intval($this->age);
+  public function getIntro() {
+    return $this->intro;
   }
 
   /**
-  * Set the value of Age
+  * Set the value of Intro
   *
-  * @param $age
-  *   an integer value
-  */      
-  public function setAge($age) {
-    if($age!=$this->age) {
+  * @param $intro
+  *   a string value
+  */    
+  public function setIntro($intro) {
+    if($intro!=$this->intro) {
       $this->markDirty();          
-      $this->age = intval($age);
+      $this->intro = $intro;
     }
   }
 
@@ -176,6 +176,18 @@ class Result extends DBExporter {
     }
   }
 
+  public function getSEOTitle() {
+    //Unwanted:  {UPPERCASE} ; / ? : @ & = + $ , . ! ~ * ' ( )
+    $string = strtolower($this->name."-".$this->goals);
+    //Strip any unwanted characters
+    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+    //Clean multiple dashes or whitespaces
+    $string = preg_replace("/[\s-]+/", " ", $string);
+    //Convert whitespaces and underscore to dash
+    $string = preg_replace("/[\s_]/", "-", $string);
+    return $string;
+  }
+
   /**
   * Loads an object's values from a given array
   *
@@ -188,7 +200,7 @@ class Result extends DBExporter {
   public function loadFromArray($p) {  
     $this->setResultId($p['result_id']);
     $this->setName($p['name']);
-    $this->setAge($p['age']);
+    $this->setIntro($p['intro']);
     $this->setGoals($p['goals']);
     $this->setStory($p['story']);
     $this->setImg($p['img']);
@@ -230,7 +242,7 @@ class Result extends DBExporter {
     $query = "REPLACE INTO results
                   SET result_id = '".mysql_escape_string($this->getResultId())."',
                       name = '".mysql_escape_string($this->getName())."',
-                      age = '".mysql_escape_string($this->getAge())."',
+                      intro = '".mysql_escape_string($this->getIntro())."',
                       goals = '".mysql_escape_string($this->getGoals())."',
                       story = '".mysql_escape_string($this->getStory())."',
                       img = '".mysql_escape_string($this->getImg())."'";
@@ -264,7 +276,7 @@ class Result extends DBExporter {
 
     $query = "INSERT INTO results
                 SET name = '".mysql_escape_string($this->getName())."',
-                    age = '".mysql_escape_string($this->getAge())."',
+                    intro = '".mysql_escape_string($this->getIntro())."',
                     goals = '".mysql_escape_string($this->getGoals())."',
                     story = '".mysql_escape_string($this->getStory())."',
                     img = '".mysql_escape_string($this->getImg())."'";

@@ -806,6 +806,7 @@ textarea {
 
 .thumbs {
 	width: 100%;
+  height: 238px;
 	float: left;
   overflow: hidden;
   position: relative;

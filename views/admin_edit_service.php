@@ -26,7 +26,7 @@
           <input name="headline" type="text" class="form-control" placeholder="e.g. The best way to achieve your goals" value="<?=$data['service']->getHeadline();?>" >
         </div>
         <div class="form-group">
-          <label for="quote">Description</label><br />
+          <label for="quote">Description <i class="glyphicon glyphicon-pencil"> </i></label><br />
           <textarea name="description" class="form-control" rows="3"><?=$data['service']->getDescription();?></textarea>
         </div>
         <input type="hidden" name="service_id" value="<?=$data['service']->getServiceId();?>" >
