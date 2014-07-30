@@ -27,7 +27,6 @@
               <li class="check"><i class="fa fa-check"> </i> Exclusive access to special offers</li>
               <li class="check"><i class="fa fa-check"> </i> Monthly newsletters</li>
               <li class="check"><i class="fa fa-check"> </i> Access to exclusive training videos</li>
-              <li class="check"><i class="fa fa-check"> </i> Words</li>
             </ul>
             <div class="form-group">
               <input type="text" name="name" class="form-control input-lg" id="name" placeholder="Enter your name">
