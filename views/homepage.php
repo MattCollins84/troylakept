@@ -13,6 +13,8 @@
 
         </div>
 
+
+
       </div>
 
       <div class="col-md-6 col-sm-12">
@@ -35,12 +37,8 @@
               <input type="text" name="email" class="form-control input-lg" id="email" placeholder="And your email address">
             </div>
             <button type="submit" class="btn btn-lg btn-danger">Sign up now!</button>
-          </form>
 
-          <div id="signup-confirm" class="hidden">
-            <h1 class="white">Thanks!</h1>
-            <p class="lead white">Thanks for signing up to my newsletter!</p>
-          </div>
+          </form>
 
         </div>
 
@@ -51,7 +49,7 @@
 
 
 <!--About Section-->
-<section id="content" class="pb40 pt20">
+<section id="content" class="pb10 pt20">
   <div class="container">
     
     <div class="row margin-30">
@@ -66,6 +64,13 @@
         <?=$pd->text($data['about']);?>
         
         <p><a class="btn btn-danger btn-lg" href="#">Get In Touch</a></p>
+
+        <div>
+          <div class="fb-like" data-href="https://www.facebook.com/TroyLakePT" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+          <br />
+          <a href="https://twitter.com/TroyLakePT" class="twitter-follow-button mt10" data-show-count="false" data-size="large" data-dnt="true">Follow @TroyLakePT</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
 
       </div>
     </div>
