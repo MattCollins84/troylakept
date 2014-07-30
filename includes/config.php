@@ -10,6 +10,7 @@ require_once("includes/Blog.php");
 require_once("includes/Result.php");
 require_once("includes/Image.php");
 require_once("includes/Media.php");
+require_once("includes/Tip.php");
 require_once("includes/functions.php");
 
 session_start();

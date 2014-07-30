@@ -49,6 +49,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/welcome$",
+        "controllerClass": "MainController",
+        "method": "renderWelcome",
+        "authentication": false 
+    },
+    {
         "regex": "^/contact/send$",
         "controllerClass": "MainController",
         "method": "sendContact",
@@ -250,6 +256,42 @@
         "regex": "^/admin/results/delete/[0-9]+$",
         "controllerClass": "ResultsController",
         "method": "deleteResult",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/media$",
+        "controllerClass": "MediaController",
+        "method": "renderMedia",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/media/add$",
+        "controllerClass": "MediaController",
+        "method": "addMedia",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/media/delete/[0-9]+$",
+        "controllerClass": "MediaController",
+        "method": "deleteMedia",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/tips$",
+        "controllerClass": "TipController",
+        "method": "renderTips",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/tips/add$",
+        "controllerClass": "TipController",
+        "method": "addTip",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/tips/delete/[0-9]+$",
+        "controllerClass": "TipController",
+        "method": "deleteTip",
         "authentication": "adminOnly" 
     }
   ]

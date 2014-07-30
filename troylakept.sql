@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 29, 2014 at 02:23 PM
+-- Generation Time: Jul 30, 2014 at 03:27 PM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `phone` varchar(20) NOT NULL,
   `active` tinyint(4) NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `contacts`
@@ -69,7 +69,8 @@ INSERT INTO `contacts` (`contact_id`, `name`, `email`, `phone`, `active`) VALUES
 (1, 'Matt', 'matt@strikesandgutters.com', '', 0),
 (3, 'Dave', 'dave@dave.com', '07731309552', 1),
 (4, 'john', 'john@test.com', '07731309552', 1),
-(5, 'john', 'trev@test.com', '07731309552', 1);
+(5, 'john', 'trev@test.com', '07731309552', 1),
+(6, 'simon', 'ssdf@sadf.com', '', 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `media` (
   `intro` text NOT NULL,
   `url` text NOT NULL,
   PRIMARY KEY (`media_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `media`
@@ -111,7 +112,8 @@ CREATE TABLE IF NOT EXISTS `media` (
 
 INSERT INTO `media` (`media_id`, `title`, `intro`, `url`) VALUES
 (1, 'I was in the news', 'hey, look! **I was in the news!**\r\n\r\n_awesome_', 'http://www.google.com'),
-(2, 'I was in the news', 'hey, look! **I was in the news!**\r\n\r\n_awesome_', 'http://www.google.com');
+(2, 'I was in the news', 'hey, look! **I was in the news!**\r\n\r\n_awesome_', 'http://www.google.com'),
+(4, 'this is a test', 'this is still a **test**', 'http://www.test.com');
 
 -- --------------------------------------------------------
 
@@ -183,6 +185,29 @@ INSERT INTO `services` (`service_id`, `name`, `headline`, `description`, `icon`)
 (5, 'Bootcamp', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-users'),
 (6, 'hardCORE abs', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', ''),
 (7, 'Diet Plans', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fa-list-alt');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tips`
+--
+
+CREATE TABLE IF NOT EXISTS `tips` (
+  `tip_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tip` text NOT NULL,
+  PRIMARY KEY (`tip_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tips`
+--
+
+INSERT INTO `tips` (`tip_id`, `tip`) VALUES
+(1, 'this is my first top tip'),
+(4, 'third'),
+(5, 'sdfsdf'),
+(6, 'sdfsdfsdf'),
+(7, 'words and some other words and a few more words and oh what do you know, a few more words');
 
 -- --------------------------------------------------------
 

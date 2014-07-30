@@ -42,6 +42,8 @@
             <li><a href="/admin/services">Services</a></li>
             <li><a href="/admin/results">Results</a></li>
             <li><a href="/admin/blog">Blog</a></li>
+            <li><a href="/admin/media">Media</a></li>
+            <li><a href="/admin/tips">Top Tips</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class=""><a href="/admin/help" target="_blank">Help</a></li>

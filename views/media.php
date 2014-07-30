@@ -9,61 +9,27 @@
   </div>
 </section>
 
-<? foreach ($data['media'] as $i => $s): ?>
-<?
-  //$icon = "<img class='mt40' src='/img/header-logo.png' alt='".$s->getName()."' />";
-  $icon = "";
-  $icons = array("fa-external-link");
-  $bits = array();
 
-  $icon = '<p class="text-center mt40">';
-  foreach ($icons as $ic) {
-    $c = (($i % 2)?"white ":"");
-    $icon .= '<i class="red fa '.$c.$ic.' fa-8x"></i>';
-  }
-  $icon .= '</p>';
-?>
-<? if ($i % 2): ?>
-  <section class="red-content">
 
-    <div class="container">
-      
-      <div class="row">
-        
-        <div class="col-md-9">
-          <h3><span class="white"><?=$s->getTitle();?></span></h3>
-          <?=$pd->text($s->getIntro());?>
-          <br /><a class="btn-main" href="<?=$s->getUrl();?>" target="_blank">Find out more!</a>
-        </div>
-        <div class="col-md-3">
-          <?=$icon;?>
-        </div>
-      </div>
-      
-    </div>
-
-  </section>
-<? else: ?>
   <section class="content">
 
     <div class="container">
       
-      <div class="row mb50 mt10">
-        <div class="col-md-9">
-          <h3><span class="red"><?=$s->getTitle();?></span></h3>
-          <?=$pd->text($s->getIntro());?>
-          <br />
-          <a class="btn-main" href="<?=$s->getUrl();?>" target="_blank">Find out more!</a>
-        </div>
-        <div class="col-md-3">
-          <?=$icon;?>
-        </div>
+      <div class="row mb20">
+        <? foreach ($data['media'] as $i => $s): ?>
+          <article class="blog mb30">
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="gray"><a href="<?=$s->getUrl();?>" target="_blank"><?=$s->getTitle();?></a></h3>
+                <?=$pd->text($s->getIntro()); ?>
+                <br />
+                <a class="btn-main" href="<?=$s->getUrl();?>">Read more...</a>
+              </div>
+            </div>
+          </article>
+        <? endforeach; ?>
       </div>
       
     </div>
-
-  </section> 
-<? endif ?>
-
-
-<? endforeach; ?>
+    
+  </section>

@@ -6,6 +6,13 @@
         
         <img src="/img/troy-lake-logo-trans-420.png" class="image-responsive homepage-logo" alt="Troy Lake PT" />
 
+        <div class="slogan">
+
+          <h1 class="text-center">STOP WISHING FOR IT.</h1>
+          <h1 class="text-center">START WORKING FOR IT.</h1>
+
+        </div>
+
       </div>
 
       <div class="col-md-6 col-sm-12">
@@ -13,7 +20,15 @@
         <div class="signup-container">
           
           <form role="form" class="home-form" id="signup"> 
-            <h2>Get my free weekly newsletters!</h2>
+            <h1 class="mt0">Get Troys Top Tips!</h1>
+            <ul class="list-unstyled">
+              <li class="check"><i class="fa fa-check"> </i> Improve your workout</li>
+              <li class="check"><i class="fa fa-check"> </i> Tips and tricks to help your diet</li>
+              <li class="check"><i class="fa fa-check"> </i> Exclusive access to special offers</li>
+              <li class="check"><i class="fa fa-check"> </i> Monthly newsletters</li>
+              <li class="check"><i class="fa fa-check"> </i> Access to exclusive training videos</li>
+              <li class="check"><i class="fa fa-check"> </i> Words</li>
+            </ul>
             <div class="form-group">
               <input type="text" name="name" class="form-control input-lg" id="name" placeholder="Enter your name">
             </div>
@@ -27,13 +42,6 @@
             <h1 class="white">Thanks!</h1>
             <p class="lead white">Thanks for signing up to my newsletter!</p>
           </div>
-
-        </div>
-
-        <div class="slogan">
-
-          <h1 class="text-center">STOP WISHING FOR IT.</h1>
-          <h1 class="text-center">START WORKING FOR IT.</h1>
 
         </div>
 
@@ -152,8 +160,7 @@ $(document).ready(function() {
       }
 
       if (data.success) {
-        $("form#signup").addClass("hidden");
-        $("#signup-confirm").removeClass("hidden");
+        document.location.href = "/welcome";
       }
 
       else {

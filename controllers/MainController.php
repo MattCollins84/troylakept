@@ -273,6 +273,21 @@
           
     }
 
+    // Render the results
+    static public function renderWelcome($rest) {
+      
+      global $config;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data = array();
+      $data['tips'] = Tip::getAll("tip_id asc");
+
+      echo View::renderView("welcome", $data);
+          
+    }
+
   }
 
 ?>
