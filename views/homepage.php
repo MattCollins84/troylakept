@@ -62,9 +62,9 @@
         <h1 class="dark-gray pb20">About Troy Lake PT</h1>
         
         <?=$pd->text($data['about']);?>
-        
-        <p><a class="btn btn-danger btn-lg" href="#">Get In Touch</a></p>
-
+        <br />
+        <p><a class="btn-main mt10" href="#">Get In Touch</a></p>
+        <br />
         <div>
           <div class="fb-like" data-href="https://www.facebook.com/TroyLakePT" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
           <br />
