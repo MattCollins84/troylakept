@@ -293,6 +293,12 @@
         "controllerClass": "TipController",
         "method": "deleteTip",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/images$",
+        "controllerClass": "ImagesController",
+        "method": "renderImages",
+        "authentication": "adminOnly" 
     }
   ]
 }
