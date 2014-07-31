@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 30, 2014 at 03:27 PM
+-- Generation Time: Jul 31, 2014 at 11:19 AM
 -- Server version: 5.5.12
 -- PHP Version: 5.4.24
 
@@ -95,6 +95,28 @@ INSERT INTO `content` (`content_id`, `content`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `images`
+--
+
+CREATE TABLE IF NOT EXISTS `images` (
+  `image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `path` text NOT NULL,
+  `height` int(11) NOT NULL,
+  `width` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`image_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`image_id`, `path`, `height`, `width`, `name`) VALUES
+(1, '5421_9565.png', 281, 500, 'test');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `media`
 --
 
@@ -150,14 +172,16 @@ CREATE TABLE IF NOT EXISTS `results` (
   `story` text NOT NULL,
   `img` varchar(255) NOT NULL,
   PRIMARY KEY (`result_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `results`
 --
 
 INSERT INTO `results` (`result_id`, `name`, `intro`, `goals`, `story`, `img`) VALUES
-(12, 'matt3', 'intro3', 'goals3', 'story3', '5373_5868.png');
+(12, 'matt3', 'intro3', 'goals3', 'story3', '5373_5868.png'),
+(13, 'sdf', 'sdfsdf', 'sdf', 'sdf', '5898_9508.png'),
+(14, 'sfsdf', 'dsfsdf', 'dsf', 'sdfsdf', '8493_8126.png');
 
 -- --------------------------------------------------------
 

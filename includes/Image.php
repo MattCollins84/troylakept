@@ -18,6 +18,7 @@ class Image extends DBExporter {
   protected $path;
   protected $height;
   protected $width;
+  protected $name;
 
   /**
   * Construct the Image object
@@ -129,6 +130,29 @@ class Image extends DBExporter {
   }
 
   /**
+  * Return the value of Name
+  *
+  * @return
+  *   a string value
+  */
+  public function getName() {
+    return $this->name;
+  }
+
+  /**
+  * Set the value of Name
+  *
+  * @param $name
+  *   a string value
+  */    
+  public function setName($name) {
+    if($name!=$this->name) {
+      $this->markDirty();          
+      $this->name = $name;
+    }
+  }
+
+  /**
   * Loads an object's values from a given array
   *
   * @param $p
@@ -142,6 +166,7 @@ class Image extends DBExporter {
     $this->setPath($p['path']);
     $this->setHeight($p['height']);
     $this->setWidth($p['width']);
+    $this->setName($p['name']);
     $this->markUnchanged();
   }
   
@@ -181,7 +206,8 @@ class Image extends DBExporter {
                   SET image_id = '".mysql_escape_string($this->getImageId())."',
                       path = '".mysql_escape_string($this->getPath())."',
                       height = '".mysql_escape_string($this->getHeight())."',
-                      width = '".mysql_escape_string($this->getWidth())."'";
+                      width = '".mysql_escape_string($this->getWidth())."',
+                      name = '".mysql_escape_string($this->getName())."'";
     $mysqlwrite->doQuery($query);
     $this->markUnchanged();
   }
@@ -213,7 +239,8 @@ class Image extends DBExporter {
     $query = "INSERT INTO images
                 SET path = '".mysql_escape_string($this->getPath())."',
                     height = '".mysql_escape_string($this->getHeight())."',
-                    width = '".mysql_escape_string($this->getWidth())."'";
+                    width = '".mysql_escape_string($this->getWidth())."',
+                    name = '".mysql_escape_string($this->getName())."'";
     $this->setImageId($mysqlwrite->doQuery($query));
     $this->markUnchanged();
   }
@@ -267,13 +294,23 @@ class Image extends DBExporter {
       }
       return $output;
     } else {
-      return false;
+      return array();
     }
+  }
+
+  
+
+  static function getExtension($str) {
+    $i = strrpos($str,".");
+    if (!$i) { return ""; } 
+    $l = strlen($str) - $i;
+    $ext = substr($str,$i+1,$l);
+    return $ext;
   }
 
   static public function createImage($file, $max_width=1000, $max_height=1000, $path="") {
 
-    $ext = ResultsController::getExtension($file['name']);
+    $ext = Image::getExtension($file['name']);
 
     list($width,$height)=getimagesize($file['tmp_name']);
 

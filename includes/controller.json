@@ -299,6 +299,18 @@
         "controllerClass": "ImagesController",
         "method": "renderImages",
         "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/image/delete/[0-9]+$",
+        "controllerClass": "ImagesController",
+        "method": "deleteImage",
+        "authentication": "adminOnly" 
+    },
+    {
+        "regex": "^/admin/images/upload$",
+        "controllerClass": "ImagesController",
+        "method": "uploadImage",
+        "authentication": "adminOnly" 
     }
   ]
 }
