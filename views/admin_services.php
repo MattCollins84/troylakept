@@ -43,6 +43,15 @@
           <label for="quote">Description <i class="glyphicon glyphicon-pencil"> </i></label><br />
           <textarea name="description" class="form-control" rows="3"></textarea>
         </div>
+        <div class="form-group">
+          <label for="icon">Icon</label><br />
+          <select name="icon" class="form-control" >
+            <option value="">- none -</option>
+            <? foreach ($data['images'] as $i): ?>
+              <option value="<?=$i->getPath();?>"><?=$i->getName();?> (<?=$i->getWidth();?> x <?=$i->getHeight();?>)</option>
+            <? endforeach; ?>
+          </select>
+        </div>
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
 

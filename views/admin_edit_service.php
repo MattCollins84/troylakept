@@ -29,6 +29,16 @@
           <label for="quote">Description <i class="glyphicon glyphicon-pencil"> </i></label><br />
           <textarea name="description" class="form-control" rows="3"><?=$data['service']->getDescription();?></textarea>
         </div>
+        <div class="form-group">
+          <label for="icon">Icon</label><br />
+          <select name="icon" class="form-control" >
+            <option value="">- none -</option>
+            <? foreach ($data['images'] as $i): ?>
+            <? $selected = ""; $selected = ($data['service']->getIcon() == $i->getPath()?"selected":""); ?>
+              <option <?=$selected;?> value="<?=$i->getPath();?>"><?=$i->getName();?> (<?=$i->getWidth();?> x <?=$i->getHeight();?>)</option>
+            <? endforeach; ?>
+          </select>
+        </div>
         <input type="hidden" name="service_id" value="<?=$data['service']->getServiceId();?>" >
         <button type="submit" class="btn btn-success">Submit</button>
       </form>

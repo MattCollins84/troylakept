@@ -21,6 +21,7 @@
       $vars = $rest->getRequestVars();
 
       $data['services'] = Service::getAll("service_id ASC");
+      $data['images'] = Image::getAll("name ASC");
       $data['msg'] = $_SESSION['msg'];
       $_SESSION['msg'] = "";
 
@@ -39,6 +40,7 @@
       $vars = $rest->getRequestVars();
 
       $data['id'] = $h[2];
+      $data['images'] = Image::getAll("name ASC");
 
       $data['service'] = new Service($data['id']);
 
@@ -71,6 +73,7 @@
       $q->setName($vars['name']);
       $q->setHeadline($vars['headline']);
       $q->setDescription($vars['description']);
+      $q->setIcon($vars['icon']);
       if (!$vars['service_id']) {
         $q->markNew();
       }

@@ -21,6 +21,7 @@
       $data['page'] = "homepage";
       $data['quote'] = Quote::getRandom();
       $data['videos'] = Video::getAll();
+      $data['services'] = Service::getAll("service_id ASC");
       $data['about'] = new Content(1);
       $data['about'] = $data['about']->getContent();
 
@@ -40,6 +41,7 @@
       $data['page'] = "results";
       $data['results'] = Result::getAll();
       $data['quote'] = Quote::getRandom();
+      $data['services'] = Service::getAll("service_id ASC");
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
@@ -57,6 +59,7 @@
       $data['page'] = "media";
       $data['media'] = Media::getAll();
       $data['quote'] = Quote::getRandom();
+      $data['services'] = Service::getAll("service_id ASC");
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
@@ -77,13 +80,14 @@
       $data['page'] = "results";
       $data['result'] = new Result($h[2]);
       $data['quote'] = Quote::getRandom();
+      $data['services'] = Service::getAll("service_id ASC");
 
       echo View::renderView("results_profile", $data);
           
     }
 
     // Render the results
-    static public function renderServices($rest) {
+    static public function renderService($rest) {
       
       global $config;
 
@@ -92,8 +96,9 @@
 
       $data = array();
       $data['page'] = "services";
-      $data['services'] = Service::getAll("service_id ASC");
+      $data['service'] = new Service($h[2]);
       $data['quote'] = Quote::getRandom();
+      $data['services'] = Service::getAll("service_id ASC");
 
       echo View::renderView("services", $data);
           
@@ -116,6 +121,7 @@
       $data['history'] = Blog::getMonths();
       $data['months'] = array("1" => "January","2" => "February","3" => "March","4" => "April","5" => "May","6" => "June","7" => "July","8" => "August","9" => "September","10" => "October","11" => "November","12" => "December");
       $data['quote'] = Quote::getRandom();
+      $data['services'] = Service::getAll("service_id ASC");
 
       echo View::renderView("blog", $data);
           
@@ -139,6 +145,7 @@
       $data['months'] = array("1" => "January","2" => "February","3" => "March","4" => "April","5" => "May","6" => "June","7" => "July","8" => "August","9" => "September","10" => "October","11" => "November","12" => "December");
       $data['quote'] = Quote::getRandom();
       $data['keywords'] = $data['post']->getKeywords();
+      $data['services'] = Service::getAll("service_id ASC");
 
       echo View::renderView("blog_article", $data);
           
@@ -158,6 +165,7 @@
       $data = array();
       $data['page'] = "contact";
       $data['quote'] = Quote::getRandom();
+      $data['services'] = Service::getAll("service_id ASC");
 
       echo View::renderView("contact", $data);
           
@@ -268,6 +276,8 @@
       $vars = $rest->getRequestVars();
 
       $data = array();
+      $data['services'] = Service::getAll("service_id ASC");
+      $data['quote'] = Quote::getRandom();
 
       echo View::renderView("thanks", $data);
           
@@ -283,6 +293,8 @@
 
       $data = array();
       $data['tips'] = Tip::getAll("tip_id asc");
+      $data['services'] = Service::getAll("service_id ASC");
+      $data['quote'] = Quote::getRandom();
 
       echo View::renderView("welcome", $data);
           

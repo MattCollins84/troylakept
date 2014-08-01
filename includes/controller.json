@@ -19,9 +19,9 @@
         "authentication": false 
     },
     {
-        "regex": "^/services$",
+        "regex": "^/services/[a-z0-9-]+/[0-9]+$",
         "controllerClass": "MainController",
-        "method": "renderServices",
+        "method": "renderService",
         "authentication": false 
     },
     {

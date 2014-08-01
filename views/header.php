@@ -57,7 +57,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="<?=($data['page']=="homepage"?"active":"");?>"><a href="/">Home</a></li>
             <li class="<?=($data['page']=="results"?"active":"");?>"><a href="/results">Results</a></li>
-            <li class="<?=($data['page']=="services"?"active":"");?>"><a href="/services">Services</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <? foreach ($data['services'] as $s): ?>
+                  <li><a href="/services/<?=$s->getSEOName();?>/<?=$s->getServiceId();?>"><?=$s->getName();?></a></li>
+                <? endforeach; ?>
+              </ul>
+            </li>
             <li class="<?=($data['page']=="blog"?"active":"");?>"><a href="/blog">Blog</a></li>
             <li class="<?=($data['page']=="media"?"active":"");?>"><a href="/media">Media</a></li>
             <li class="sign-up"><a href="/contact"><span class="white"> Get In Touch</span></a></li>
