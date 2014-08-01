@@ -61,6 +61,7 @@
             <th></th>
             <th>Title</th>
             <th>Description</th>
+            <th>Homepage</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -70,7 +71,7 @@
             <td><a href="<?=$v->getUrl();?>" target="_blank"><?=($v->getThumbnail()?"<img src='".$v->getThumbnail()."' />":"click here");?></a></td>
             <td><?=$v->getTitle();?></td>
             <td><?=$v->getDescription();?></td>
-            <!--<td><i data-id="<?=$v->getVideoId();?>" data-action="feature" class="glyphicon featured-star glyphicon-star<?=($v->getFeatured()?"":"-empty");?>"></i></td>-->
+            <td><i data-id="<?=$v->getVideoId();?>" data-action="feature" class="glyphicon featured-star glyphicon-star<?=($v->getFeatured()?"":"-empty");?>"></i></td>
             <td><button class="btn btn-danger" data-action="delete" data-id="<?=$v->getVideoId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
           </tr>
           <? endforeach; ?>
@@ -194,15 +195,11 @@
 
     var id = $(this).attr("data-id");
 
-    if (confirm("Are you sure you want to feature this video?") === true) {
+    $.post("/admin/videos/feature/"+id, function(data) {
+      
+      window.location.href = "/admin/videos";
 
-      $.post("/admin/videos/feature/"+id, function(data) {
-        
-        window.location.href = "/admin/videos";
-
-      });
-
-    }
+    });
 
   });
 

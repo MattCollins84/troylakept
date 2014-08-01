@@ -66,7 +66,7 @@
               </ul>
             </li>
             <li class="<?=($data['page']=="blog"?"active":"");?>"><a href="/blog">Blog</a></li>
-            <li class="<?=($data['page']=="media"?"active":"");?>"><a href="/media">Media</a></li>
+            <!--<li class="<?=($data['page']=="media"?"active":"");?>"><a href="/media">Media</a></li>-->
             <li class="sign-up"><a href="/contact"><span class="white"> Get In Touch</span></a></li>
           </ul>
         </div><!--/.navbar-collapse -->

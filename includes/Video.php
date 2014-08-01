@@ -312,10 +312,7 @@ class Video extends DBExporter {
 
     global $mysqlwrite;
 
-    $query = "UPDATE videos SET featured = 0";
-    $mysqlwrite->doQuery($query);
-
-    $query = "UPDATE videos SET featured = 1 WHERE video_id = '".mysql_escape_string($id)."'";
+    $query = "UPDATE videos SET featured = (1-featured) WHERE video_id = '".mysql_escape_string($id)."'";
     $mysqlwrite->doQuery($query);
 
     return true;
@@ -331,7 +328,7 @@ class Video extends DBExporter {
   * @return
   *   Array of objects
   */
-  static public function getAll($sortby=false) {
+  static public function getAll($sortby=false, $featured=false) {
     global $mysqlread;
     $output = array();
 
@@ -339,7 +336,10 @@ class Video extends DBExporter {
     if ($sortby) {
       $orderby = "ORDER BY ".$sortby;
     }
-    $query = "SELECT * FROM videos $orderby";
+    if ($featured) {
+      $where = "WHERE featured = 1 ";
+    }
+    $query = "SELECT * FROM videos $where $orderby";
 
     $rows = $mysqlread->getManyRows($query);
 

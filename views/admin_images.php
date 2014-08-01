@@ -76,6 +76,7 @@
           <tr>
             <th>Thumbnail</th>
             <th>Name</th>
+            <th>Markdown</th>
             <th>W x H</th>
             <th>Actions</th>
           </tr>
@@ -85,6 +86,7 @@
           <tr>
             <td><img src="/uploads/thumb_<?=$v->getPath();?>"></td>
             <td><?=$v->getName();?></td>
+            <td>![Alt text](/uploads/<?=$v->getPath();?>)</td>
             <td><?=$v->getWidth();?> x <?=$v->getHeight();?></td>
             <td><button class="btn btn-danger mt10" data-action="delete" data-id="<?=$v->getImageId();?>">Delete</button></td>
           </tr>

@@ -27,10 +27,10 @@ class Validation {
 
   static public function clean($data) {
     $data = trim($data);
-    $data = strip_tags($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    $data = htmlentities($data);
+    //$data = strip_tags($data);
+    //$data = stripslashes($data);
+    //$data = htmlspecialchars($data);
+    //$data = htmlentities($data);
     return $data;
   }
 

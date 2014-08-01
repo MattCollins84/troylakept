@@ -3,7 +3,5 @@
 - meta desc
 - url (talk to troy about hosting etc...)
 - phone number, email address
-- about image
 
-** Results
-- images
+- sitemap

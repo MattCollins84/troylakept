@@ -84,6 +84,8 @@
       }
       $q->save();
 
+      generateSitemap();
+
       $_SESSION['msg'] = "Blog post ".($vars['blog_id']?"edited":"added")." successfully.";
 
       echo json_encode(array(

@@ -20,10 +20,30 @@
       $data = array();
       $data['page'] = "homepage";
       $data['quote'] = Quote::getRandom();
-      $data['videos'] = Video::getAll();
+      $data['videos'] = Video::getAll(false, true);
       $data['services'] = Service::getAll("service_id ASC");
       $data['about'] = new Content(1);
       $data['about'] = $data['about']->getContent();
+
+      foreach ($data['services'] as $s) {
+
+        switch ($s->getServiceId()) {
+
+          case 1:
+          $data['one'] = $s;
+          break;
+
+          case 3:
+          $data['partner'] = $s;
+          break;
+
+          case 4:
+          $data['fitfarm'] = $s;
+          break;
+
+        }
+
+      }
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();

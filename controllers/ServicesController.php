@@ -79,6 +79,8 @@
       }
       $q->save();
 
+      generateSitemap();
+
       $_SESSION['msg'] = "Service ".($vars['service_id']?"edited":"added")." successfully.";
 
       echo json_encode(array(

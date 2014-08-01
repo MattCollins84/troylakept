@@ -83,30 +83,27 @@
   <div class="container">
     <div class="row">
       
-      <a href="/services">
+      <a href="/services/1-2-1-training/1">
         <div class="col-sm-4 text-center home-box">
           <i class="fa fa-user fa-4x"></i>
-          <h3>One 2 One Training</h3>
-          <p>One on One training with Troy.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a mauris dui. Nam eu risus neque, sed blandit ante. Integer eget massa.</p>
+          <h3><?=$data['one']->getName();?></h3>
+          <p><?=$data['one']->getHeadline();?></p>
         </div>
       </a>
       
-      <a href="/services">
+      <a href="/services/partner-training/3">
         <div class="col-sm-4 text-center home-box">
-          <i class="fa fa-users fa-4x"></i>
-          <h3>Group Training</h3>
-          <p>Take part in my specialised group training programmes, for maximum effect.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a mauris dui. Nam eu risus neque, sed blandit ante. Integer eget massa.</p>
+          <i class="fa fa-male fa-4x"></i><i class="fa fa-female fa-4x"></i>
+          <h3><?=$data['partner']->getName();?></h3>
+          <p><?=$data['partner']->getHeadline();?></p>
         </div>
       </a>
       
-      <a href="/services">
+      <a href="/services/fit-farm/4">
         <div class="col-sm-4 text-center home-box">
           <i class="fa fa-heart fa-4x"></i>
-          <h3>See All Services</h3>
-          <p>My full range of services includes diet plans, HardCORE abs and Partner Training classes.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a mauris dui. Nam eu risus neque, sed blandit ante. Integer eget massa.</p>
+          <h3><?=$data['fitfarm']->getName();?></h3>
+          <p><?=$data['fitfarm']->getHeadline();?></p>
         </div>
       </a>
       
