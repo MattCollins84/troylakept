@@ -77,6 +77,11 @@
             <td>1. item one<br />2. item two<br />3. item three</td>
             <td><?=$pd->text("1. item one\n2. item two\n3. item three");?></td>
           </tr>
+          <tr>
+            <td>Image</td>
+            <td>![Troy Lake PT](http://<?=$_SERVER['HTTP_HOST'];?>/img/troy-headshot.jpg)</td>
+            <td><?=$pd->text("![Alt text](http://".$_SERVER['HTTP_HOST']."/img/troy-headshot.jpg)");?></td>
+          </tr>
         </tbody>
       </table>
 
