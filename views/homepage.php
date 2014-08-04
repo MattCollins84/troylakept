@@ -1,7 +1,7 @@
 <!--Header Section-->
 <section id="header">
   <div class="container">
-    <div class="row mt80">
+    <div class="row mt80-lg">
       <div class="col-md-6 col-sm-12">
         
         <img src="/img/troy-lake-logo-trans-420.png" class="image-responsive homepage-logo" alt="Troy Lake PT" />

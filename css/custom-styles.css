@@ -60,6 +60,10 @@
   margin-top: 80px!important;
 }
 
+.mt80-lg {
+  margin-top: 80px;
+}
+
 .mt100 {
   margin-top: 100px!important;
 }
@@ -239,6 +243,16 @@ a {
     padding-top: 70px;
   }
 
+  #header {
+    background: url("/img/header.jpg") no-repeat center 56px #3e4549;
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .mt80-lg {
+    margin-top: 0px;
+  }
+
 }
 
 /* Landscape phone to portrait tablet */
@@ -252,6 +266,16 @@ a {
     padding-top: 70px;
   }
 
+  #header {
+    background: url("/img/header.jpg") no-repeat center 56px #3e4549;
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .mt80-lg {
+    margin-top: 0px;
+  }
+
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -259,6 +283,16 @@ a {
 
   .homepage-logo {
     margin-bottom: 30px!important;
+  }
+
+  #header {
+    background: url("/img/header.jpg") no-repeat center 56px #3e4549;
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .mt80-lg {
+    margin-top: 60px;
   }
 
 }
