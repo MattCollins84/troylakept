@@ -6,19 +6,19 @@
     <p>Manage your media links</p>
   </div>
   
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
   
   <div class="row">
 
@@ -63,13 +63,13 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['media'] as $q): ?>
+          <?php foreach ($data['media'] as $q): ?>
           <tr>
-            <td><?=$q->getTitle();?></td>
-            <td><a href="<?=$q->getUrl();?>" target="_blank"><?=$q->getUrl();?></a></td>
-            <td><button class="btn btn-danger" data-action="delete" data-id="<?=$q->getMediaId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
+            <td><?php echo $q->getTitle();?></td>
+            <td><a href="<?php echo $q->getUrl();?>" target="_blank"><?php echo $q->getUrl();?></a></td>
+            <td><button class="btn btn-danger" data-action="delete" data-id="<?php echo $q->getMediaId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

@@ -6,19 +6,19 @@
     <p>Add and remove your top tips</p>
   </div>
   
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
   
   <div class="row">
 
@@ -54,12 +54,12 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['tips'] as $q): ?>
+          <?php foreach ($data['tips'] as $q): ?>
           <tr>
-            <td><?=$q->getTip();?></td>
-            <td><button class="btn btn-danger" data-action="delete" data-id="<?=$q->getTipId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
+            <td><?php echo $q->getTip();?></td>
+            <td><button class="btn btn-danger" data-action="delete" data-id="<?php echo $q->getTipId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

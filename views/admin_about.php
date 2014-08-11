@@ -6,19 +6,19 @@
     <p>Edit the text in the &quot;About&quot; section on the homepage.</p>
   </div>
   
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
 
   <div class="row">
 
@@ -28,7 +28,7 @@
 
       <form role="form" id="about">
         <div class="form-group">
-          <textarea name="about" class="form-control" rows="6"><?=$data['about']->getContent();?></textarea>
+          <textarea name="about" class="form-control" rows="6"><?php echo $data['about']->getContent();?></textarea>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
       </form>

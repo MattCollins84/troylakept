@@ -6,19 +6,19 @@
     <p>Manage the services that you advertise on your webiste.</p>
   </div>
 
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
   
   <div class="row">
 
@@ -47,9 +47,9 @@
           <label for="icon">Icon</label><br />
           <select name="icon" class="form-control" >
             <option value="">- none -</option>
-            <? foreach ($data['images'] as $i): ?>
-              <option value="<?=$i->getPath();?>"><?=$i->getName();?> (<?=$i->getWidth();?> x <?=$i->getHeight();?>)</option>
-            <? endforeach; ?>
+            <?php foreach ($data['images'] as $i): ?>
+              <option value="<?php echo $i->getPath();?>"><?php echo $i->getName();?> (<?php echo $i->getWidth();?> x <?php echo $i->getHeight();?>)</option>
+            <?php endforeach; ?>
           </select>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
@@ -73,14 +73,14 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['services'] as $v): ?>
+          <?php foreach ($data['services'] as $v): ?>
           <tr>
-            <td><?=$v->getName();?></td>
-            <td><?=$v->getHeadline();?></td>
-            <td><?=nl2br($v->getDescription());?></td>
-            <td><a class="btn btn-success" href="/admin/services/<?=$v->getServiceId();?>">Edit</a><br /><button class="btn btn-danger mt10" data-action="delete" data-id="<?=$v->getServiceId();?>">Delete</button></td>
+            <td><?php echo $v->getName();?></td>
+            <td><?php echo $v->getHeadline();?></td>
+            <td><?php echo nl2br($v->getDescription());?></td>
+            <td><a class="btn btn-success" href="/admin/services/<?php echo $v->getServiceId();?>">Edit</a><br /><button class="btn btn-danger mt10" data-action="delete" data-id="<?php echo $v->getServiceId();?>">Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

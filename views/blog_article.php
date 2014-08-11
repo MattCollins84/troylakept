@@ -1,4 +1,4 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <!--Page Title-->
 <section id="page-title">
   <div class="container">
@@ -22,10 +22,10 @@
         <article class="blog mb30">
           <div class="row">
             <div class="col-md-12">
-              <h3 class="gray"><i class="fa fa-pencil fa-2x blue"></i> <?=$data['post']->getTitle();?></h3>
-              <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy <i class="fa fa-calendar"></i> <?=$data['post']->getPostedDate()->getAsEnglishDate();?></em></small></p>
+              <h3 class="gray"><i class="fa fa-pencil fa-2x blue"></i> <?php echo $data['post']->getTitle();?></h3>
+              <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy <i class="fa fa-calendar"></i> <?php echo $data['post']->getPostedDate()->getAsEnglishDate();?></em></small></p>
               
-              <?=$pd->text($data['post']->getBody());?>
+              <?php echo $pd->text($data['post']->getBody());?>
               
             </div>
           </div>
@@ -50,9 +50,9 @@
         
         <p class="lead">History<p>
         
-        <? foreach ($data['history'] as $history): ?>
-          <p><a href="/blog/<?=$history['year'];?>/<?=$history['month'];?>"><i class="fa fa-angle-right"></i> <?=$data['months'][$history['month']];?> <?=$history['year'];?></a></p>
-        <? endforeach; ?>
+        <?php foreach ($data['history'] as $history): ?>
+          <p><a href="/blog/<?php echo $history['year'];?>/<?php echo $history['month'];?>"><i class="fa fa-angle-right"></i> <?php echo $data['months'][$history['month']];?> <?php echo $history['year'];?></a></p>
+        <?php endforeach; ?>
         
           
       </div><!--Side Bar-->

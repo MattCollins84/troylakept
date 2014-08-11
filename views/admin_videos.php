@@ -18,19 +18,19 @@
     </div>
   </div>
 
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
 
   <div class="row">
 
@@ -66,15 +66,15 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['videos'] as $v): ?>
+          <?php foreach ($data['videos'] as $v): ?>
           <tr>
-            <td><a href="<?=$v->getUrl();?>" target="_blank"><?=($v->getThumbnail()?"<img src='".$v->getThumbnail()."' />":"click here");?></a></td>
-            <td><?=$v->getTitle();?></td>
-            <td><?=$v->getDescription();?></td>
-            <td><i data-id="<?=$v->getVideoId();?>" data-action="feature" class="glyphicon featured-star glyphicon-star<?=($v->getFeatured()?"":"-empty");?>"></i></td>
-            <td><button class="btn btn-danger" data-action="delete" data-id="<?=$v->getVideoId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
+            <td><a href="<?php echo $v->getUrl();?>" target="_blank"><?php echo ($v->getThumbnail()?"<img src='".$v->getThumbnail()."' />":"click here");?></a></td>
+            <td><?php echo $v->getTitle();?></td>
+            <td><?php echo $v->getDescription();?></td>
+            <td><i data-id="<?php echo $v->getVideoId();?>" data-action="feature" class="glyphicon featured-star glyphicon-star<?php echo ($v->getFeatured()?"":"-empty");?>"></i></td>
+            <td><button class="btn btn-danger" data-action="delete" data-id="<?php echo $v->getVideoId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

@@ -19,27 +19,27 @@
       <form role="form" id="service">
         <div class="form-group">
           <label for="name">Name</label>
-          <input name="name" type="text" class="form-control" placeholder="e.g. One 2 One Training" value="<?=$data['service']->getName();?>" >
+          <input name="name" type="text" class="form-control" placeholder="e.g. One 2 One Training" value="<?php echo $data['service']->getName();?>" >
         </div>
         <div class="form-group">
           <label for="headline">Headline</label>
-          <input name="headline" type="text" class="form-control" placeholder="e.g. The best way to achieve your goals" value="<?=$data['service']->getHeadline();?>" >
+          <input name="headline" type="text" class="form-control" placeholder="e.g. The best way to achieve your goals" value="<?php echo $data['service']->getHeadline();?>" >
         </div>
         <div class="form-group">
           <label for="quote">Description <i class="glyphicon glyphicon-pencil"> </i></label><br />
-          <textarea name="description" class="form-control" rows="3"><?=$data['service']->getDescription();?></textarea>
+          <textarea name="description" class="form-control" rows="3"><?php echo $data['service']->getDescription();?></textarea>
         </div>
         <div class="form-group">
           <label for="icon">Icon</label><br />
           <select name="icon" class="form-control" >
             <option value="">- none -</option>
-            <? foreach ($data['images'] as $i): ?>
-            <? $selected = ""; $selected = ($data['service']->getIcon() == $i->getPath()?"selected":""); ?>
-              <option <?=$selected;?> value="<?=$i->getPath();?>"><?=$i->getName();?> (<?=$i->getWidth();?> x <?=$i->getHeight();?>)</option>
-            <? endforeach; ?>
+            <?php foreach ($data['images'] as $i): ?>
+            <?php $selected = ""; $selected = ($data['service']->getIcon() == $i->getPath()?"selected":""); ?>
+              <option <?php echo $selected;?> value="<?php echo $i->getPath();?>"><?php echo $i->getName();?> (<?php echo $i->getWidth();?> x <?php echo $i->getHeight();?>)</option>
+            <?php endforeach; ?>
           </select>
         </div>
-        <input type="hidden" name="service_id" value="<?=$data['service']->getServiceId();?>" >
+        <input type="hidden" name="service_id" value="<?php echo $data['service']->getServiceId();?>" >
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
 
@@ -53,7 +53,7 @@
 
     e.preventDefault();
 
-    $.post("/admin/services/update/<?=$data['service']->getServiceId();?>", $(this).serialize(), function(data) {
+    $.post("/admin/services/update/<?php echo $data['service']->getServiceId();?>", $(this).serialize(), function(data) {
       
       try {
         data = JSON.parse(data);

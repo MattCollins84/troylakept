@@ -1,4 +1,4 @@
-<?
+<?php
 
   /*
    *  Abstract class on which all of our controllers are based

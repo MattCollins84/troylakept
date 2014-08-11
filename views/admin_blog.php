@@ -1,4 +1,4 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <div class="container mt80">
 
   <!-- Main component for a primary marketing message or call to action -->
@@ -7,19 +7,19 @@
     <p>Manage your blog posts</p>
   </div>
 
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
   
   <div class="row">
 
@@ -77,14 +77,14 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['posts'] as $v): ?>
+          <?php foreach ($data['posts'] as $v): ?>
           <tr>
-            <td><?=$v->getTitle();?></td>
-            <td><?=$v->getPostedDate()->getAsEnglishDate();?></td>
-            <td><?=$pd->text($v->getIntro());?></td>
-            <td><a class="btn btn-success" href="/admin/blog/<?=$v->getBlogId();?>">Edit</a><br /><button class="btn btn-danger mt10" data-action="delete" data-id="<?=$v->getBlogId();?>">Delete</button></td>
+            <td><?php echo $v->getTitle();?></td>
+            <td><?php echo $v->getPostedDate()->getAsEnglishDate();?></td>
+            <td><?php echo $pd->text($v->getIntro());?></td>
+            <td><a class="btn btn-success" href="/admin/blog/<?php echo $v->getBlogId();?>">Edit</a><br /><button class="btn btn-danger mt10" data-action="delete" data-id="<?php echo $v->getBlogId();?>">Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

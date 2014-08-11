@@ -1,4 +1,4 @@
-<?
+<?php
 
 function generateSitemap() {
 
@@ -11,17 +11,17 @@ function generateSitemap() {
 
   ob_start();
   ?>
-<?=$domain;?>/
-<?=$domain;?>/results
-<?=$domain;?>/blog
-<? foreach ($blogs as $b): ?>
-<?=$domain;?>/blog/<?=$b->getSEOTitle();?>/<?=$b->getBlogId()."\n";?>
-<? endforeach; ?>
-<? foreach ($services as $b): ?>
-<?=$domain;?>/services/<?=$b->getSEOName();?>/<?=$b->getServiceId()."\n";?>
-<? endforeach; ?>
-<?=$domain;?>/contact
-<?
+<?php echo $domain;?>/
+<?php echo $domain;?>/results
+<?php echo $domain;?>/blog
+<?php foreach ($blogs as $b): ?>
+<?php echo $domain;?>/blog/<?php echo $b->getSEOTitle();?>/<?php echo $b->getBlogId()."\n";?>
+<?php endforeach; ?>
+<?php foreach ($services as $b): ?>
+<?php echo $domain;?>/services/<?php echo $b->getSEOName();?>/<?php echo $b->getServiceId()."\n";?>
+<?php endforeach; ?>
+<?php echo $domain;?>/contact
+<?php
 $content = ob_get_clean();
 
   file_put_contents($path, "\xEF\xBB\xBF".  $content); 

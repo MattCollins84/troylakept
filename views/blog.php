@@ -1,4 +1,4 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <!--Page Title-->
 <section id="page-title">
   <div class="container">
@@ -19,19 +19,19 @@
       <!--Column1-->
       <div class="col-md-9">
         
-        <? foreach ($data['posts'] as $post): ?>
+        <?php foreach ($data['posts'] as $post): ?>
           <article class="blog mb30">
             <div class="row">
               <div class="col-md-12">
-                <h3 class="gray"><!--<i class="fa fa-pencil fa-2x blue"></i> --><a href="/blog/<?=$post->getSEOTitle();?>/<?=$post->getBlogId();?>"><?=$post->getTitle();?></a></h3>
-                <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar"></i> <?=$post->getPostedDate()->getAsEnglishDate();?></em></small></p>
-                <?=$pd->text($post->getIntro()); ?>
+                <h3 class="gray"><!--<i class="fa fa-pencil fa-2x blue"></i> --><a href="/blog/<?php echo $post->getSEOTitle();?>/<?php echo $post->getBlogId();?>"><?php echo $post->getTitle();?></a></h3>
+                <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar"></i> <?php echo $post->getPostedDate()->getAsEnglishDate();?></em></small></p>
+                <?php echo $pd->text($post->getIntro()); ?>
                 <br />
-                <a class="btn-main" href="/blog/<?=$post->getSEOTitle();?>/<?=$post->getBlogId();?>">Read more...</a>
+                <a class="btn-main" href="/blog/<?php echo $post->getSEOTitle();?>/<?php echo $post->getBlogId();?>">Read more...</a>
               </div>
             </div>
           </article>
-        <? endforeach; ?>
+        <?php endforeach; ?>
         
       </div><!--End Column1-->
       
@@ -41,9 +41,9 @@
         
         <p class="lead">History<p>
         
-        <? foreach ($data['history'] as $history): ?>
-          <p><a href="/blog/<?=$history['year'];?>/<?=$history['month'];?>"><i class="fa fa-angle-right"></i> <?=$data['months'][$history['month']];?> <?=$history['year'];?></a></p>
-        <? endforeach; ?>
+        <?php foreach ($data['history'] as $history): ?>
+          <p><a href="/blog/<?php echo $history['year'];?>/<?php echo $history['month'];?>"><i class="fa fa-angle-right"></i> <?php echo $data['months'][$history['month']];?> <?php echo $history['year'];?></a></p>
+        <?php endforeach; ?>
         
           
       </div><!--Side Bar-->

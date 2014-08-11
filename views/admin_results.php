@@ -1,4 +1,4 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <div class="container mt80">
 
   <!-- Main component for a primary marketing message or call to action -->
@@ -7,19 +7,19 @@
     <p>Manage the results stories</p>
   </div>
 
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
   
   <div class="row">
 
@@ -87,14 +87,14 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['results'] as $v): ?>
+          <?php foreach ($data['results'] as $v): ?>
           <tr>
-            <td><?=$v->getName();?></td>
-            <td><?=$v->getGoals();?></td>
-            <td><?=$pd->text(substr($v->getStory(), 0, 70)."...");?></td>
-            <td><a class="btn btn-success" href="/admin/result/<?=$v->getResultId();?>">Edit</a><br /><button class="btn btn-danger mt10" data-action="delete" data-id="<?=$v->getResultId();?>">Delete</button></td>
+            <td><?php echo $v->getName();?></td>
+            <td><?php echo $v->getGoals();?></td>
+            <td><?php echo $pd->text(substr($v->getStory(), 0, 70)."...");?></td>
+            <td><a class="btn btn-success" href="/admin/result/<?php echo $v->getResultId();?>">Edit</a><br /><button class="btn btn-danger mt10" data-action="delete" data-id="<?php echo $v->getResultId();?>">Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

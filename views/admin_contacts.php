@@ -20,14 +20,14 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['contacts'] as $c): ?>
+          <?php foreach ($data['contacts'] as $c): ?>
           <tr>
-            <td><?=$c->getName();?></td>
-            <td><?=$c->getEmail();?></td>
-            <td><?=$c->getPhone();?></td>
-            <td><?=($c->getActive()?"<i class='glyphicon glyphicon-ok'></i>":"<i class='glyphicon glyphicon-remove'></i>");?></td>
+            <td><?php echo $c->getName();?></td>
+            <td><?php echo $c->getEmail();?></td>
+            <td><?php echo $c->getPhone();?></td>
+            <td><?php echo ($c->getActive()?"<i class='glyphicon glyphicon-ok'></i>":"<i class='glyphicon glyphicon-remove'></i>");?></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

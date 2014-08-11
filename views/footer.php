@@ -1,16 +1,16 @@
     <!--Message-->
-    <? if ($data['quote']): ?>
+    <?php if ($data['quote']): ?>
     <section id="message">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
-            <h4 class="gray"><i class="fa fa-quote-left"></i> <?=$data['quote']->getQuote();?> <i class="fa fa-quote-right"></i> </h4>
-            <h5><?=$data['quote']->getName();?></h5>
+            <h4 class="gray"><i class="fa fa-quote-left"></i> <?php echo $data['quote']->getQuote();?> <i class="fa fa-quote-right"></i> </h4>
+            <h5><?php echo $data['quote']->getName();?></h5>
           </div>
         </div>
       </div>
     </section>
-    <? endif; ?>
+    <?php endif; ?>
 
     <!--Bottom Section-->
     <section id="bottom" class="pt20">
@@ -34,7 +34,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <p>Copyright <?=date("Y"); ?> - All Rights Reserved | <a href="/admin" target="_blank" rel="nofollow">admin</a></p>
+            <p>Copyright <?php echo date("Y"); ?> - All Rights Reserved | <a href="/admin" target="_blank" rel="nofollow">admin</a></p>
           </div>
         </div>
       </div>

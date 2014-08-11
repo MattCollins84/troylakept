@@ -1,9 +1,9 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
   <title>Troy Lake PT | Stop wishing for it. Start working for it.</title>
-  <meta name="keywords" content="<?=($data['keywords']?$data['keywords']:"troy lake pt, personal training, bootcamp, fit camp, diet plans, weight loss, insanity, workout");?>">
+  <meta name="keywords" content="<?php echo ($data['keywords']?$data['keywords']:"troy lake pt, personal training, bootcamp, fit camp, diet plans, weight loss, insanity, workout");?>">
   <meta name="description" content="Website of Troy Lake, Personal Trainer. Based in the ">
   <meta name="viewport" content="width=device-width">
   
@@ -55,18 +55,18 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="<?=($data['page']=="homepage"?"active":"");?>"><a href="/">Home</a></li>
-            <li class="<?=($data['page']=="results"?"active":"");?>"><a href="/results">Results</a></li>
+            <li class="<?php echo ($data['page']=="homepage"?"active":"");?>"><a href="/">Home</a></li>
+            <li class="<?php echo ($data['page']=="results"?"active":"");?>"><a href="/results">Results</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <? foreach ($data['services'] as $s): ?>
-                  <li><a href="/services/<?=$s->getSEOName();?>/<?=$s->getServiceId();?>"><?=$s->getName();?></a></li>
-                <? endforeach; ?>
+                <?php foreach ($data['services'] as $s): ?>
+                  <li><a href="/services/<?php echo $s->getSEOName();?>/<?php echo $s->getServiceId();?>"><?php echo $s->getName();?></a></li>
+                <?php endforeach; ?>
               </ul>
             </li>
-            <li class="<?=($data['page']=="blog"?"active":"");?>"><a href="/blog">Blog</a></li>
-            <!--<li class="<?=($data['page']=="media"?"active":"");?>"><a href="/media">Media</a></li>-->
+            <li class="<?php echo ($data['page']=="blog"?"active":"");?>"><a href="/blog">Blog</a></li>
+            <!--<li class="<?php echo ($data['page']=="media"?"active":"");?>"><a href="/media">Media</a></li>-->
             <li class="sign-up"><a href="/contact"><span class="white"> Get In Touch</span></a></li>
           </ul>
         </div><!--/.navbar-collapse -->

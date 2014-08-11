@@ -1,4 +1,4 @@
-<?
+<?php
 class Validation {
   
   // check required fields

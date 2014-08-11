@@ -6,19 +6,19 @@
     <p>Manage the random quotes that appear at the bottom of each website page.</p>
   </div>
   
-  <? if ($data['msg']): ?>
+  <?php if ($data['msg']): ?>
   <div class="row">
 
     <div class="col-sm-12">
 
       <div class="alert alert-success">
-        <p><?=$data['msg'];?></p>
+        <p><?php echo $data['msg'];?></p>
       </div>
 
     </div>
 
   </div>
-  <? endif; ?>
+  <?php endif; ?>
   
   <div class="row">
 
@@ -59,13 +59,13 @@
           </tr>
         </thead>
         <tbody>
-          <? foreach ($data['quotes'] as $q): ?>
+          <?php foreach ($data['quotes'] as $q): ?>
           <tr>
-            <td><?=$q->getName();?></td>
-            <td><?=$q->getQuote();?></td>
-            <td><button class="btn btn-danger" data-action="delete" data-id="<?=$q->getQuoteId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
+            <td><?php echo $q->getName();?></td>
+            <td><?php echo $q->getQuote();?></td>
+            <td><button class="btn btn-danger" data-action="delete" data-id="<?php echo $q->getQuoteId();?>"><i class="fa fa-trash-o"> </i> Delete</button></td>
           </tr>
-          <? endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 

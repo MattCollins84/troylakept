@@ -60,7 +60,7 @@
 
         <h1 class="dark-gray pb20">About Troy Lake PT</h1>
         
-        <?=$pd->text($data['about']);?>
+        <?php echo $pd->text($data['about']);?>
         <br />
         <p><a class="btn-main mt10" href="#">Get In Touch</a></p>
         <br />
@@ -85,24 +85,24 @@
       <a href="/services/1-2-1-training/1">
         <div class="col-sm-4 text-center home-box">
           <i class="fa fa-user fa-4x"></i>
-          <h3><?=$data['one']->getName();?></h3>
-          <p><?=$data['one']->getHeadline();?></p>
+          <h3><?php echo $data['one']->getName();?></h3>
+          <p><?php echo $data['one']->getHeadline();?></p>
         </div>
       </a>
       
       <a href="/services/partner-training/3">
         <div class="col-sm-4 text-center home-box">
           <i class="fa fa-male fa-4x"></i><i class="fa fa-female fa-4x"></i>
-          <h3><?=$data['partner']->getName();?></h3>
-          <p><?=$data['partner']->getHeadline();?></p>
+          <h3><?php echo $data['partner']->getName();?></h3>
+          <p><?php echo $data['partner']->getHeadline();?></p>
         </div>
       </a>
       
       <a href="/services/fit-farm/4">
         <div class="col-sm-4 text-center home-box">
           <i class="fa fa-heart fa-4x"></i>
-          <h3><?=$data['fitfarm']->getName();?></h3>
-          <p><?=$data['fitfarm']->getHeadline();?></p>
+          <h3><?php echo $data['fitfarm']->getName();?></h3>
+          <p><?php echo $data['fitfarm']->getHeadline();?></p>
         </div>
       </a>
       
@@ -110,7 +110,7 @@
   </div>
 </section>
 
-<? if ($data['videos']): ?>
+<?php if ($data['videos']): ?>
 <section id="content" class="pb40 pt20">
   <div class="container">
     
@@ -120,25 +120,25 @@
         <h1 class="black">Check out some of my Videos</h1>
       </div>
 
-      <? foreach ($data['videos'] as $v): ?>
+      <?php foreach ($data['videos'] as $v): ?>
       <div class="col-sm-6 col-md-4">
         <div class="media mb20">
-          <a class="pull-left" target="_blank" href="<?=$v->getUrl();?>">
-            <img class="media-object" src="<?=$v->getThumbnail();?>" id="detail-thumb">
+          <a class="pull-left" target="_blank" href="<?php echo $v->getUrl();?>">
+            <img class="media-object" src="<?php echo $v->getThumbnail();?>" id="detail-thumb">
           </a>
           <div class="media-body">
-            <h5 class="media-heading black lead"><?=$v->getTitle();?></h5>
-            <p><?=$v->getDescription();?></p>
+            <h5 class="media-heading black lead"><?php echo $v->getTitle();?></h5>
+            <p><?php echo $v->getDescription();?></p>
           </div>
         </div>
       </div>
-      <? endforeach; ?>
+      <?php endforeach; ?>
       
     </div>
     
   </div>
 </section>
-<? endif; ?>
+<?php endif; ?>
 <script>
 
 $(document).ready(function() {

@@ -34,8 +34,8 @@
 
     <div class="row">
 
-      <? foreach ($data['tips'] as $i => $t): ?>
-      <? $n = ($i + 1); ?>
+      <?php foreach ($data['tips'] as $i => $t): ?>
+      <?php $n = ($i + 1); ?>
       
         <div class="col-sm-12 col-md-6">
         
@@ -43,13 +43,13 @@
             <div class="logo">
               <img src="/img/small-trans-logo.png" alt="Troy Lake PT">
             </div>
-            <h1>Tip #<?=$n;?></h1>
-            <?=$pd->text($t->getTip());?>
+            <h1>Tip #<?php echo $n;?></h1>
+            <?php echo $pd->text($t->getTip());?>
           </div>
           
         </div>
 
-      <? endforeach; ?>
+      <?php endforeach; ?>
       
     </div><!--End Row-->   
   </div>

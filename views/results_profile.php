@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 title-white">
-        <h2><?=$data['result']->getName();?> - <?=$data['result']->getGoals();?></h2>
+        <h2><?php echo $data['result']->getName();?> - <?php echo $data['result']->getGoals();?></h2>
       </div>
     </div>
   </div>
@@ -17,12 +17,12 @@
     <div class="row">
         
         <div class="col-sm-12 col-md-6 mb20">
-          <img src="/uploads/<?=$data['result']->getImg();?>" class="img-responsive img-block" alt="<?=$data['result']->getName();?> - Before and after">
+          <img src="/uploads/<?php echo $data['result']->getImg();?>" class="img-responsive img-block" alt="<?php echo $data['result']->getName();?> - Before and after">
         </div>
 
         <div class="col-sm-12 col-md-6">
-          <p class="lead red"><?=$data['result']->getIntro();?></p>
-          <?=$pd->text($data['result']->getStory());?>
+          <p class="lead red"><?php echo $data['result']->getIntro();?></p>
+          <?php echo $pd->text($data['result']->getStory());?>
         </div>
         
     </div><!--End Row-->

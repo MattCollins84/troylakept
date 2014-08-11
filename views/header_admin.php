@@ -20,7 +20,7 @@
 
   <body>
 
-    <? if ($_SESSION['user']): ?>
+    <?php if ($_SESSION['user']): ?>
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -53,6 +53,6 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <? endif; ?>
+    <?php endif; ?>
 
     <div class="container">

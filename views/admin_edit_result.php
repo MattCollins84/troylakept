@@ -1,4 +1,4 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <div class="container mt80 mb10">
 
   <!-- Main component for a primary marketing message or call to action -->
@@ -22,18 +22,18 @@
           <div class="col-sm-6">
             <div class="form-group">
               <label for="name">Name</label>
-              <input name="name" id="name" type="text" class="form-control" placeholder="e.g. Stacey, Redcar" value="<?=$data['result']->getName();?>">
+              <input name="name" id="name" type="text" class="form-control" placeholder="e.g. Stacey, Redcar" value="<?php echo $data['result']->getName();?>">
             </div>
             <div class="form-group">
               <label for="goals">Goals</label>
-              <input name="goals" id="goals" type="text" class="form-control" placeholder="e.g. weight loss, toning up" value="<?=$data['result']->getGoals();?>">
+              <input name="goals" id="goals" type="text" class="form-control" placeholder="e.g. weight loss, toning up" value="<?php echo $data['result']->getGoals();?>">
             </div>
             <div class="form-group">
               <label for="intro">Introduction</label><br />
-              <textarea name="intro" id="intro" class="form-control" rows="5"><?=$data['result']->getIntro();?></textarea>
+              <textarea name="intro" id="intro" class="form-control" rows="5"><?php echo $data['result']->getIntro();?></textarea>
             </div>
             <div class="form-group">
-              <img src="/uploads/thumb_<?=$data['result']->getImg();?>" class="img-responsive img-block">
+              <img src="/uploads/thumb_<?php echo $data['result']->getImg();?>" class="img-responsive img-block">
               <label for="image">Upload Image<br />
               <input type="file" id="image" name="image" />
             </div>
@@ -41,12 +41,12 @@
           <div class="col-sm-6">
             <div class="form-group">
               <label for="story">Story <i class="glyphicon glyphicon-pencil"> </i></label><br />
-              <textarea name="story" id="story" class="form-control" rows="16"><?=$data['result']->getStory();?></textarea>
+              <textarea name="story" id="story" class="form-control" rows="16"><?php echo $data['result']->getStory();?></textarea>
             </div>
           </div>
           <div class="col-sm-12">
             <button type="submit" class="btn btn-success">Submit</button>
-            <input type="hidden" name="result_id" value="<?=$data['result']->getResultId();?>" />
+            <input type="hidden" name="result_id" value="<?php echo $data['result']->getResultId();?>" />
           </div>
         </div>
       </form>

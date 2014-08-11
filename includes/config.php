@@ -1,4 +1,4 @@
-<?
+<?php
 require_once("includes/DB.php");
 require_once("includes/Contact.php");
 require_once("includes/Quote.php");

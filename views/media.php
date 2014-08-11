@@ -1,4 +1,4 @@
-<? $pd = new Parsedown(); ?>
+<?php $pd = new Parsedown(); ?>
 <section id="page-title">
   <div class="container">
     <div class="row">
@@ -16,18 +16,18 @@
     <div class="container">
       
       <div class="row mb20">
-        <? foreach ($data['media'] as $i => $s): ?>
+        <?php foreach ($data['media'] as $i => $s): ?>
           <article class="blog mb30">
             <div class="row">
               <div class="col-md-12">
-                <h3 class="gray"><a href="<?=$s->getUrl();?>" target="_blank"><?=$s->getTitle();?></a></h3>
-                <?=$pd->text($s->getIntro()); ?>
+                <h3 class="gray"><a href="<?php echo $s->getUrl();?>" target="_blank"><?php echo $s->getTitle();?></a></h3>
+                <?php echo $pd->text($s->getIntro()); ?>
                 <br />
-                <a class="btn-main" href="<?=$s->getUrl();?>">Read more...</a>
+                <a class="btn-main" href="<?php echo $s->getUrl();?>">Read more...</a>
               </div>
             </div>
           </article>
-        <? endforeach; ?>
+        <?php endforeach; ?>
       </div>
       
     </div>
