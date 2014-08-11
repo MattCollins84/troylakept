@@ -24,7 +24,7 @@
           <input type="text" class="col-xs-12" name="subject" placeholder="Subject">
           <textarea class="col-xs-12" name="message" placeholder="Message"></textarea>
           <input type="text" class="col-xs-12" name="where" placeholder="Where did you hear about Troy Lake PT?">
-          <p><input type="checkbox" name="signup" value="1" checked> Do you want to receive free fitness tips and articles from Troy?</p>
+          <p><input type="checkbox" name="signup" value="1"> If you do not want to receive free fitness tips and articles from Troy, click here.</p>
           <p><button class="btn-main" type="submit">Send Message</button></p>
         </form>
       </div><!--End Span8-->

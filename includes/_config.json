@@ -9,6 +9,10 @@
         "password": "sqldbmine",
         "host": "127.0.0.1",
         "db": "claims"
+      },
+      "mailchimp": { 
+        "key": "",
+        "list_id": ""
       }
     }
   ]

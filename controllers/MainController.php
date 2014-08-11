@@ -6,6 +6,7 @@
   
   require_once("includes/Rest.php");
   require_once("includes/Email.php");
+  require_once("includes/MailChimp.php");
   require_once("controllers/Controller.php");
 
   
@@ -228,14 +229,30 @@
 
       $send = Email::contactEmail($config['support_email'], $vars['subject'], $body, $vars['email']);
 
-      if ($vars['signup']) {
-        $c = new Contact();
+      if (!$vars['signup']) {
+        /*$c = new Contact();
         $c->setName($vars['name']);
         $c->setEmail($vars['email']);
         $c->setPhone($vars['phone']);
         $c->setActive(true);
         $c->markNew(true);
-        $c->save();
+        $c->save();*/
+        $names = explode(" ", $vars['name']);
+        $fname = $names[0];
+        unset($names[0]);
+
+        $lname = implode(" ", $names);
+
+        $MailChimp = new \Drewm\MailChimp($config['mailchimp']['key']);
+        $result = $MailChimp->call('lists/subscribe', array(
+          'id'                => $config['mailchimp']['list_id'],
+          'email'             => array('email'=>$vars['email']),
+          'merge_vars'        => array('FNAME'=>$fname, 'LNAME'=>$lname),
+          'double_optin'      => false,
+          'update_existing'   => true,
+          'replace_interests' => false,
+          'send_welcome'      => false,
+        ));
       }
 
       echo json_encode(array(
@@ -273,15 +290,35 @@
         exit;
       }
 
+      /*
       $c = new Contact();
       $c->setName($vars['name']);
       $c->setEmail($vars['email']);
       $c->setActive(true);
       $c->markNew(true);
       $c->save();
+      */
+
+      $names = explode(" ", $vars['name']);
+      $fname = $names[0];
+      unset($names[0]);
+
+      $lname = implode(" ", $names);
+
+      $MailChimp = new \Drewm\MailChimp($config['mailchimp']['key']);
+      $result = $MailChimp->call('lists/subscribe', array(
+        'id'                => $config['mailchimp']['list_id'],
+        'email'             => array('email'=>$vars['email']),
+        'merge_vars'        => array('FNAME'=>$fname, 'LNAME'=>$lname),
+        'double_optin'      => false,
+        'update_existing'   => true,
+        'replace_interests' => false,
+        'send_welcome'      => false,
+      ));
 
       echo json_encode(array(
-        "success" => true
+        "success" => true,
+        "mc" => $result
       ));
       exit;
           

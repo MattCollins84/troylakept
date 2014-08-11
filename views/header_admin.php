@@ -35,7 +35,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/admin/dashboard">Dashboard</a></li>
-            <li><a href="/admin/contacts">Contacts</a></li>
+            <!--<li><a href="/admin/contacts">Contacts</a></li>-->
             <li><a href="/admin/about">About</a></li>
             <li><a href="/admin/quotes">Quotes</a></li>
             <li><a href="/admin/videos">Videos</a></li>
