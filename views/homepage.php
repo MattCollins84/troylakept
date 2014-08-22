@@ -58,7 +58,7 @@
       
       <div class="col-md-9">
 
-        <h1 class="dark-gray pb20">About Troy Lake PT</h1>
+        <h1 class="dark-gray pb20">About Troy Lake Personal Training</h1>
         
         <?php echo $pd->text($data['about']);?>
         <br />
