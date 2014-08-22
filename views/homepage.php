@@ -62,7 +62,7 @@
         
         <?php echo $pd->text($data['about']);?>
         <br />
-        <p><a class="btn-main mt10" href="#">Get In Touch</a></p>
+        <p><a class="btn-main mt10" href="/contact">Get In Touch</a></p>
         <br />
         <div>
           <div class="fb-like" data-href="https://www.facebook.com/TroyLakePT" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
