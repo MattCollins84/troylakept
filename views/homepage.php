@@ -100,8 +100,8 @@
       
       <a href="/services/fit-farm/4">
         <div class="col-sm-4 text-center home-box">
-          <i class="fa fa-heart fa-4x"></i>
-          <h3><?php echo $data['fitfarm']->getName();?></h3>
+          <img src="/img/bull.png">
+          <h3 class="mt45"><?php echo $data['fitfarm']->getName();?></h3>
           <p><?php echo $data['fitfarm']->getHeadline();?></p>
         </div>
       </a>
