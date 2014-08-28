@@ -39,6 +39,9 @@
         TS10 1HF
         </adress>
 
+        <p class="mt10 hidden-xs"><i class="fa fa-phone"> </i> 07951091947</p>
+        <p class="mt10 visible-xs"><a class="btn btn-success" href="tel:07951091947"><i class="fa fa-phone"> </i> 07951091947</a></p>
+
         <p class="mt20">
           <a class="text-primary" target="_blank" href="https://twitter.com/TroyLakePT"><i class="fa fa-twitter-square fa-2x"> </i></a> 
           <a class="text-primary" target="_blank" href="https://www.facebook.com/TroyLakePT"><i class="fa fa-facebook-square fa-2x"> </i></a> 
