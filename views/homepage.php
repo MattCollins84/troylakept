@@ -22,13 +22,13 @@
         <div class="signup-container">
           
           <form role="form" class="home-form" id="signup"> 
-            <h1 class="mt0">Get Troys Top Tips!</h1>
+            <h1 class="mt0">GET TROYS TOP TIPS!</h1>
             <ul class="list-unstyled">
-              <li class="check"><i class="fa fa-check"> </i> Improve your workout</li>
-              <li class="check"><i class="fa fa-check"> </i> Tips and tricks to help your diet</li>
-              <li class="check"><i class="fa fa-check"> </i> Exclusive access to special offers</li>
-              <li class="check"><i class="fa fa-check"> </i> Monthly newsletters</li>
-              <li class="check"><i class="fa fa-check"> </i> Access to exclusive training videos</li>
+              <li class="check"><i class="fa fa-check"> </i> ADVANCE YOUR WORKOUT</li>
+              <li class="check"><i class="fa fa-check"> </i> TIPS AND TRICKS TO IMPROVE YOUR DIET</li>
+              <li class="check"><i class="fa fa-check"> </i> REGULAR INFOTAINING EMAILS</li>
+              <li class="check"><i class="fa fa-check"> </i> MONTHLY NEWSLETTERS</li>
+              <li class="check"><i class="fa fa-check"> </i> ACCESS TO EXCLUSIVE TRAINING VIDEOS</li>
             </ul>
             <div class="form-group">
               <input type="text" name="name" class="form-control input-lg" id="name" placeholder="Enter your name">

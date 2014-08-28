@@ -229,6 +229,11 @@ a {
   padding: 5px;
 }
 
+.txt-override {
+  padding-left: 6px!important;
+  padding-right: 6px!important;
+}
+
 /* MEDIA QUERIES */
 /* Landscape phones and down */
 @media (max-width: 480px) { 

@@ -229,7 +229,7 @@
 
       $send = Email::contactEmail($config['support_email'], $vars['subject'], $body, $vars['email']);
 
-      if (!$vars['signup']) {
+      if ($vars['signup']) {
         /*$c = new Contact();
         $c->setName($vars['name']);
         $c->setEmail($vars['email']);
