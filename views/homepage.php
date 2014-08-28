@@ -119,8 +119,12 @@
       <div class="col-sm-12 mb20">
         <h1 class="black">Check out some of my Videos</h1>
       </div>
-
+      
+      <?php $pos = 1; ?>
       <?php foreach ($data['videos'] as $v): ?>
+        <?php if ($pos === 1): ?>
+          <div class="row">
+        <?php endif; ?>
       <div class="col-sm-6 col-md-4">
         <div class="media mb20">
           <a class="pull-left" target="_blank" href="<?php echo $v->getUrl();?>">
@@ -132,7 +136,16 @@
           </div>
         </div>
       </div>
+        <?php if ($pos === 3): ?>
+          <?php $pos = 0; ?>
+          </div>
+        <?php endif; ?>
+      <?php $pos++; ?>
       <?php endforeach; ?>
+      
+      <?php if ($pos < 3): ?>
+        </div>
+      <?php endif; ?>
       
     </div>
     
