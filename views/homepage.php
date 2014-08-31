@@ -24,7 +24,7 @@
           <form role="form" class="home-form" id="signup"> 
             <h1 class="mt0">GET TROYS TOP TIPS!</h1>
             <ul class="list-unstyled">
-              <li class="check"><i class="fa fa-check"> </i> ADVANCE YOUR WORKOUT</li>
+              <li class="check"><i class="fa fa-check"> </i> ADVANCE YOUR WORKOUTS</li>
               <li class="check"><i class="fa fa-check"> </i> TIPS AND TRICKS TO IMPROVE YOUR DIET</li>
               <li class="check"><i class="fa fa-check"> </i> REGULAR INFOTAINING EMAILS</li>
               <li class="check"><i class="fa fa-check"> </i> MONTHLY NEWSLETTERS</li>

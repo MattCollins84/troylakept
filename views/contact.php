@@ -24,7 +24,7 @@
           <input type="text" class="col-xs-12" name="subject" placeholder="Subject">
           <textarea class="col-xs-12 txt-override" name="message" placeholder="Message"></textarea>
           <input type="text" class="col-xs-12" name="where" placeholder="Where did you hear about Troy Lake Personal Training?">
-          <p><input type="checkbox" name="signup" value="1"> If you would like to receive free health and fitness tips from Troy on how to get in the best shape of your life, click here</p>
+          <p>If you would like to receive regular emails from Troy on how to get in the best shape of your life, please tick this box <input type="checkbox" name="signup" value="1"></p>
           <p><button class="btn-main" type="submit">Send Message</button></p>
         </form>
       </div><!--End Span8-->
