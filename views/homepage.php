@@ -53,7 +53,7 @@
     
     <div class="row margin-30">
       <div class="col-md-3">
-        <img src="/img/troy-headshot.jpg" class="img-block img-circle b-black mt30" />        
+        <img src="/img/troy-about.jpg" class="img-block img-circle b-black mt30" />        
       </div>
       
       <div class="col-md-9">
@@ -117,7 +117,7 @@
     <div class="row">
       
       <div class="col-sm-12 mb20">
-        <h1 class="black">Check out some of my Videos</h1>
+        <h1 class="black">Check out my videos</h1>
       </div>
       
       <?php $pos = 1; ?>
