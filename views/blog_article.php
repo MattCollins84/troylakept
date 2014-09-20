@@ -26,8 +26,19 @@
               <p class="blue"><small><em><i class="fa fa-user"></i> Posted By Troy <i class="fa fa-calendar"></i> <?php echo $data['post']->getPostedDate()->getAsEnglishDate();?></em></small></p>
               
               <?php echo $pd->text($data['post']->getBody());?>
+
+              <div>
+                <div class="fb-like" data-href="https://www.facebook.com/TroyLakePT" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                <br />
+                <a href="https://twitter.com/TroyLakePT" class="twitter-follow-button mt10" data-show-count="false" data-size="large" data-dnt="true">Follow @TroyLakePT</a>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="TroyLakePT" data-size="large" data-count="none">Share</a>
+
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+              </div>
               
             </div>
+
+
           </div>
         </article>
         <!--
