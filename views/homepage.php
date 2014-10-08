@@ -26,7 +26,7 @@
             <ul class="list-unstyled">
               <li class="check"><i class="fa fa-check"> </i> ADVANCE YOUR WORKOUTS</li>
               <li class="check"><i class="fa fa-check"> </i> TIPS AND TRICKS TO IMPROVE YOUR DIET</li>
-              <li class="check"><i class="fa fa-check"> </i> REGULAR INFOTAINING EMAILS</li>
+              <li class="check"><i class="fa fa-check"> </i> REGULAR INFORMATIVE AND ENTERTAINING EMAILS</li>
               <li class="check"><i class="fa fa-check"> </i> MONTHLY NEWSLETTERS</li>
               <li class="check"><i class="fa fa-check"> </i> ACCESS TO EXCLUSIVE TRAINING VIDEOS</li>
             </ul>

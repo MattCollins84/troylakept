@@ -8,7 +8,7 @@
         <h1 class="">Welcome to Troy Lake Personal Training!</h1>
 
         <p class="white lead">On my website, you will find everything you need to know about my Personal Training business and the awesome results we get.</p>
-        <p class="white lead">You will also find some inspiring workout videos, some great training photo's and details on how to start your fitness journey with me. I will also be sending you exclusive newsletters and regular infotaining e-mails.</p>
+        <p class="white lead">You will also find some inspiring workout videos, some great training photo's and details on how to start your fitness journey with me. I will also be sending you exclusive newsletters and regular informative and entertaining e-mails.</p>
         <p class="white lead">I will be adding more features and tools for you guys very shortly, so keep coming back. In the meantime, check out my top tips for advancing your workouts and improving your body.</p>
         
         <p class="white lead">- Troy</p>
